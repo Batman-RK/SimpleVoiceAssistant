@@ -1,0 +1,6 @@
+<voice-interaction-service 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:sessionService="com.example.simplevoiceassistant.MyVoiceInteractionSessionService"
+    android:recognitionService="com.example.simplevoiceassistant.MyRecognitionService"
+    android:supportsAssist="true"
+    android:supportsLocalInteraction="true" />

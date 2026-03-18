@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.simplevoiceassistant"
+    android:sharedUserId="android.uid.system"> <!-- 跟隨 FactoryUI 使用 system uid -->
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- 為了能將自己設為預設助手，通常需要 Secure Settings 寫入權限 -->
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+
+    <application
+        android:label="Simple Voice Assistant"
+        android:theme="@android:style/Theme.NoTitleBar">
+        
+        <!-- 必要：引用 RTK Framework -->
+        <uses-library android:name="rtk-framework"/>
+
+        <!-- 核心服務：VoiceInteractionService -->
+        <service android:name=".MyVoiceInteractionService"
+                 android:permission="android.permission.BIND_VOICE_INTERACTION"
+                 android:exported="true">
+            <meta-data android:name="android.voice_interaction"
+                       android:resource="@xml/voice_interaction_service" />
+            <intent-filter>
+                <action android:name="android.service.voice.VoiceInteractionService" />
+            </intent-filter>
+        </service>
+
+        <!-- Session 服務：負責 UI -->
+        <service android:name=".MyVoiceInteractionSessionService"
+                 android:permission="android.permission.BIND_VOICE_INTERACTION"
+                 android:exported="true" />
+
+        <!-- 新增：語音辨識服務 -->
+        <service android:name=".MyRecognitionService"
+                 android:permission="android.permission.BIND_RECOGNITION_SERVICE"
+                 android:exported="true">
+            <intent-filter>
+                <action android:name="android.speech.RecognitionService" />
+            </intent-filter>
+        </service>
+
+    </application>
+</manifest>

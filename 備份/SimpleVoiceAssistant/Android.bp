@@ -1,0 +1,37 @@
+android_app {
+    name: "SimpleVoiceAssistant",
+
+    // 使用系統 API，這對於 VoiceInteractionService 來說很重要
+    platform_apis: true,
+    
+    // 保留 RTK 框架引用，確保與你的平台相容
+    uses_libs: ["rtk-framework"],
+
+    srcs: [
+        "src/**/*.java",
+    ],
+
+    resource_dirs: [
+        "res"
+    ],
+
+    // 跟隨 FactoryUI 使用 Platform 簽名 (最高權限)
+    certificate: "platform",
+
+    // 跟隨 FactoryUI 安裝到 system_ext 分區
+    system_ext_specific: true,
+    
+    // 設定為特權 App
+    privileged: true,
+
+    optimize: {
+        enabled: false, // 練習階段建議先關閉混淆，方便看 Log
+    },
+
+    // 依賴庫：保留基本支援庫和 RTK 框架
+    static_libs: [
+        "androidx.leanback_leanback", // Android TV UI 庫
+        // "android-support-v4",
+        "rtk-framework",
+    ],
+}
