@@ -8,17 +8,31 @@
 
 在 Android Voice Interaction Framework 中，當視窗（Session）跳出來後，讀取錄音並非透過一般 Activity，而是直接在 `VoiceInteractionSession` 內部操作：
 
-```mermaid
-graph TD
-    A[cmd voiceinteraction show] --> B(MyVoiceInteractionSession #onShow)
-    B -->|建立| C[AudioRecord]
-    C -->|啟動| D[Background Thread 背景執行緒]
-    D -->|循環讀取| E[PCM 16-bit 16kHz Buffer]
-    E -->|計算強度| F[均方根 RMS 振幅]
-    F -->|判定 > 閾值| G{聲音強度是否夠大?}
-    G -->|是| H[Handler.post 更新 UI 提示文字]
-    G -->|否| I[維持傾聽狀態]
-```
+## 📝 Audio Pipeline 運作流水線
+
+當會話（Session）視窗浮現後，麥克風的聲音資料會依序經過以下四個關卡：
+
+### 📥 1. 建立錄音管道 (AudioRecord)
+*   **觸發點**：`onShow()` 生命週期被調用（提示視窗浮現在最上層）。
+*   **動作**：建立 `AudioRecord` 物件，正式與板子上的 D-MIC（麥克風）對接建立專屬通路。
+
+---
+
+### 🧵 2. 啟動背景線程 (Background Thread)
+*   **動作**：向系統借用一條獨立 Thread（線程），在運作期間內，持續利用 `mAudioRecord.read(buffer)` 將 PCM 聲音切片（16-bit）讀入記憶體快取。
+
+---
+
+### 📊 3. 計算短波能量 (RMS 均方根)
+*   **動作**：對讀進來的數據進行平方、加總後開根號。
+*   **作用**：算出這極短時間內（例如 0.1 秒）聲音的**整體平均強度**。
+
+---
+
+### 🔄 4. 調用 Handler 連動 UI
+*   **判定層**：
+    *   **大於門檻值 (有聲音)** ➔ 聯動主線程，切換文字為 **「🎙️ 正在接收聲音...」**
+    *   **小於門檻值 (無聲狀態)** ➔ 文字維持為 **「🎙️ 正在傾聽中...」**。
 
 ---
 
