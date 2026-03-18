@@ -168,4 +168,3 @@ Android TV 遙控器的麥克風音頻通常是透過藍牙 (SCO 或 HID with Vo
 現在你不需要擔心 AI 模型或自然語言處理，首要任務是**「打通管道」**。
 在 Android Framework 中，讓按下遙控器 -> 觸發你的 Code -> 彈出 UI -> 拿到麥克風權限，這條路通了，後面接 ChatGPT 還是 Google Assistant SDK 都是小事。
 
-準備好開始寫 Level 1 的 Code 了嗎？如果準備好了，我可以提供 Boilerplate Code 給你。
