@@ -6,8 +6,11 @@
 
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <!-- 為了能將自己設為預設助手，通常需要 Secure Settings 寫入權限 -->
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    
+    <!-- 新增外部儲存權限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:label="Simple Voice Assistant"

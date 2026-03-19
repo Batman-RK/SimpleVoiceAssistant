@@ -28,20 +28,20 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
     private boolean mIsRecording = false;
     private Thread mRecordThread;
 
-    // --- 錄音檔案儲存 ---
+    // --- Audio file saved ---
     private java.io.File mAudioFile;
     private java.io.FileOutputStream mFileOutputStream;
     private long mTotalAudioLen = 0;
 
-    // --- UI 元件 ---
+    // --- UI components ---
     private TextView mStatusTextView;
     private Handler mMainHandler = new Handler(Looper.getMainLooper());
 
-    private static final int NOISE_THRESHOLD = 500; // 門檻值，可依背景噪音微調
+    private static final int NOISE_THRESHOLD = 500; // Threshold value, can be adjusted according to background noise
 
     public MyVoiceInteractionSession(Context context) {
         super(context);
-        Log.d(TAG, "MyVoiceInteractionSession: 實例已建立");
+        Log.d(TAG, "MyVoiceInteractionSession: Instance created");
     }
 
     @Override
@@ -52,7 +52,7 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
         mStatusTextView.setText("🎙️ RTK Assistant Listening...");
         mStatusTextView.setTextSize(24);
         mStatusTextView.setTextColor(Color.WHITE);
-        mStatusTextView.setBackgroundColor(Color.parseColor("#CC000000")); // 深色半透明背景
+        mStatusTextView.setBackgroundColor(Color.parseColor("#CC000000")); // Dark semi-transparent background
         mStatusTextView.setPadding(40, 40, 40, 40);
         mStatusTextView.setGravity(Gravity.CENTER);
         
@@ -83,7 +83,7 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
         if (mIsRecording) return;
 
         try {
-            // 初始化檔案儲存
+            // Initialize file storage
             java.io.File dir = new java.io.File("/storage/emulated/0/Recordings");
             if (!dir.exists()) {
                 dir.mkdirs();
@@ -91,7 +91,7 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
             mAudioFile = new java.io.File(dir, "voice_test_" + System.currentTimeMillis() + ".wav");
             mFileOutputStream = new java.io.FileOutputStream(mAudioFile);
             
-            // 先寫入 44 字节的空白作為 Header 佔位
+            // Write 44 bytes of blank space as Header placeholder
             byte[] headerBlank = new byte[44];
             mFileOutputStream.write(headerBlank);
             mTotalAudioLen = 0;
@@ -101,34 +101,34 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
                     SAMPLE_RATE, CHANNEL, ENCODING, minBufferSize);
 
             if (mAudioRecord.getState() != AudioRecord.STATE_INITIALIZED) {
-                Log.e(TAG, "AudioRecord 初始化失敗！");
-                updateUiText("❌ 麥克風初始化失敗");
+                Log.e(TAG, "AudioRecord initialization failed!");
+                updateUiText("❌ Microphone initialization failed!");
                 return;
             }
 
             mAudioRecord.startRecording();
             mIsRecording = true;
-            updateUiText("🎙️ 正在傾聽中...");
+            updateUiText("🎙️ Usan正在傾聽中...");
 
             mRecordThread = new Thread(this::recordLoop);
             mRecordThread.start();
 
         } catch (Exception e) {
-            Log.e(TAG, "啟動錄製或建立檔案錯誤: ", e);
-            updateUiText("❌ 啟動失敗: " + e.getMessage());
+            Log.e(TAG, "Error starting recording or creating file: ", e);
+            updateUiText("❌ Usan啟動失敗: " + e.getMessage());
         }
     }
 
     private void recordLoop() {
         int bufferSize = AudioRecord.getMinBufferSize(SAMPLE_RATE, CHANNEL, ENCODING);
-        short[] buffer = new short[bufferSize / 2]; // 16-bit 需讀取為 short
+        short[] buffer = new short[bufferSize / 2]; // 16-bit should be read as short
 
         while (mIsRecording) {
             if (mAudioRecord == null) break;
             
             int readBytes = mAudioRecord.read(buffer, 0, buffer.length);
             if (readBytes > 0) {
-                // 新增：寫入檔案
+                // Add: Write to file
                 try {
                     byte[] byteBuf = shortToByte(buffer, readBytes);
                     if (mFileOutputStream != null) {
@@ -136,10 +136,10 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
                         mTotalAudioLen += byteBuf.length;
                     }
                 } catch (java.io.IOException e) {
-                    Log.e(TAG, "檔案寫入錯誤: ", e);
+                    Log.e(TAG, "File write error: ", e);
                 }
 
-                // 計算均方根 (RMS) 振幅
+                // Calculate Root Mean Square (RMS) amplitude
                 long sum = 0;
                 for (int i = 0; i < readBytes; i++) {
                     sum += buffer[i] * buffer[i];
@@ -147,9 +147,9 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
                 double rms = Math.sqrt(sum / readBytes);
 
                 if (rms > NOISE_THRESHOLD) {
-                    mMainHandler.post(() -> mStatusTextView.setText("🎙️ 正在接收聲音... (dB)"));
+                    mMainHandler.post(() -> mStatusTextView.setText("🎙️ Usan正在接收聲音... (dB)"));
                 } else {
-                    mMainHandler.post(() -> mStatusTextView.setText("🎙️ 正在傾聽中..."));
+                    mMainHandler.post(() -> mStatusTextView.setText("🎙️ Usan正在傾聽中..."));
                 }
             }
         }
@@ -178,16 +178,16 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
             mAudioRecord = null;
         }
 
-        // 新增：處理與更新 WAV 檔案頭
+        // Add: Process and update WAV file header
         if (mFileOutputStream != null) {
             try {
                 mFileOutputStream.close();
                 mFileOutputStream = null;
                 updateWavHeader(mAudioFile, mTotalAudioLen);
-                updateUiText("🎙️ 錄音檔存檔完成！");
-                Log.d(TAG, "錄音檔保存至: " + mAudioFile.getAbsolutePath());
+                updateUiText("🎙️ Usan錄音檔存檔完成！");
+                Log.d(TAG, "Audio file saved to: " + mAudioFile.getAbsolutePath());
             } catch (java.io.IOException e) {
-                Log.e(TAG, "關閉檔案錯誤: ", e);
+                Log.e(TAG, "Error closing file: ", e);
             }
         }
     }
@@ -200,7 +200,7 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
         });
     }
 
-    // --- 新增：將 short 陣列轉 byte 陣列 ---
+    // --- Add: Convert short array to byte array ---
     private byte[] shortToByte(short[] sData, int size) {
         byte[] bytes = new byte[size * 2];
         for (int i = 0; i < size; i++) {
@@ -210,7 +210,7 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
         return bytes;
     }
 
-    // --- 新增：回寫 WAV 標頭檔 ---
+    // --- Add: Write WAV file header ---
     private void updateWavHeader(java.io.File file, long totalAudioLen) {
         try {
             java.io.RandomAccessFile raf = new java.io.RandomAccessFile(file, "rw");
@@ -250,7 +250,7 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
             raf.write(header);
             raf.close();
         } catch (Exception e) {
-            Log.e(TAG, "更新 WAV 標頭錯誤: ", e);
+            Log.e(TAG, "Update WAV header error: ", e);
         }
     }
 }
