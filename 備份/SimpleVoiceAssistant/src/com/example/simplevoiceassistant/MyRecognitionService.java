@@ -10,17 +10,17 @@ public class MyRecognitionService extends RecognitionService {
 
     @Override
     protected void onStartListening(Intent recognizerIntent, Callback listener) {
-        Log.d(TAG, "onStartListening: 系統請求開始錄音辨識");
-        // 這裡未來會實作 AudioRecord 邏輯
+        Log.d(TAG, "onStartListening: The system requests to start audio recording and recognition");
+        // The logic for AudioRecord will be implemented here in the future.
     }
 
     @Override
     protected void onCancel(Callback listener) {
-        Log.d(TAG, "onCancel: 辨識取消");
+        Log.d(TAG, "onCancel: Recognition canceled");
     }
 
     @Override
     protected void onStopListening(Callback listener) {
-        Log.d(TAG, "onStopListening: 停止錄音");
+        Log.d(TAG, "onStopListening: Stop listening");
     }
 }

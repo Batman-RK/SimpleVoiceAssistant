@@ -207,7 +207,7 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
                 mFileOutputStream.close();
                 mFileOutputStream = null;
                 updateWavHeader(mAudioFile, mTotalAudioLen);
-                updateUiText("🎙️ Usan錄音檔存檔完成！");
+                updateUiText("🎙️ [UsanTest]錄音檔存檔完成！");
                 Log.d(TAG, "Audio file saved to: " + mAudioFile.getAbsolutePath());
             } catch (java.io.IOException e) {
                 Log.e(TAG, "Error closing file: ", e);

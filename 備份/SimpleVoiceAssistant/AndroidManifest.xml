@@ -2,13 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.simplevoiceassistant"
-    android:sharedUserId="android.uid.system"> <!-- 跟隨 FactoryUI 使用 system uid -->
+    android:sharedUserId="android.uid.system"> <!-- Follow FactoryUI to use system uid -->
 
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
     
-    <!-- 新增外部儲存權限 -->
+    <!-- Add external storage permission -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -16,10 +16,10 @@
         android:label="Simple Voice Assistant"
         android:theme="@android:style/Theme.NoTitleBar">
         
-        <!-- 必要：引用 RTK Framework -->
+        <!-- Add: Reference RTK Framework -->
         <uses-library android:name="rtk-framework"/>
 
-        <!-- 核心服務：VoiceInteractionService -->
+        <!-- Core Service: VoiceInteractionService -->
         <service android:name=".MyVoiceInteractionService"
                  android:permission="android.permission.BIND_VOICE_INTERACTION"
                  android:exported="true">
@@ -30,12 +30,12 @@
             </intent-filter>
         </service>
 
-        <!-- Session 服務：負責 UI -->
+        <!-- Session Service: Responsible for UI -->
         <service android:name=".MyVoiceInteractionSessionService"
                  android:permission="android.permission.BIND_VOICE_INTERACTION"
                  android:exported="true" />
 
-        <!-- 新增：語音辨識服務 -->
+        <!-- Add: Speech Recognition Service -->
         <service android:name=".MyRecognitionService"
                  android:permission="android.permission.BIND_RECOGNITION_SERVICE"
                  android:exported="true">

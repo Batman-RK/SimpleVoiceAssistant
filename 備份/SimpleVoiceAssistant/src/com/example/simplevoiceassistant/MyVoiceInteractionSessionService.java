@@ -10,7 +10,7 @@ public class MyVoiceInteractionSessionService extends VoiceInteractionSessionSer
 
     @Override
     public VoiceInteractionSession onNewSession(Bundle args) {
-        Log.d(TAG, "onNewSession: 系統正在請求建立新的語音會話");
+        Log.d(TAG, "onNewSession: The system is requesting to create a new voice session");
         return new MyVoiceInteractionSession(this);
     }
 }
