@@ -33,6 +33,9 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
     private java.io.FileOutputStream mFileOutputStream;
     private long mTotalAudioLen = 0;
 
+    // --- Audio Effects ---
+    private android.media.audiofx.AcousticEchoCanceler mAec;
+
     // --- UI components ---
     private TextView mStatusTextView;
     private Handler mMainHandler = new Handler(Looper.getMainLooper());
@@ -106,16 +109,29 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
                 return;
             }
 
+            // --- Enable AEC (Acoustic Echo Canceler) ---
+            if (android.media.audiofx.AcousticEchoCanceler.isAvailable()) {
+                mAec = android.media.audiofx.AcousticEchoCanceler.create(mAudioRecord.getAudioSessionId());
+                if (mAec != null) {
+                    mAec.setEnabled(true);
+                    Log.d(TAG, "AEC successfully enabled!");
+                } else {
+                    Log.e(TAG, "Hardware supports AEC, but failed to create AEC instance.");
+                }
+            } else {
+                Log.w(TAG, "Hardware doesn't support AEC.");
+            }
+
             mAudioRecord.startRecording();
             mIsRecording = true;
-            updateUiText("🎙️ Usan正在傾聽中...");
+            updateUiText("🎙️ [Usan test]正在傾聽中...");
 
             mRecordThread = new Thread(this::recordLoop);
             mRecordThread.start();
 
         } catch (Exception e) {
             Log.e(TAG, "Error starting recording or creating file: ", e);
-            updateUiText("❌ Usan啟動失敗: " + e.getMessage());
+            updateUiText("❌ [Usan test]啟動失敗: " + e.getMessage());
         }
     }
 
@@ -147,9 +163,9 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
                 double rms = Math.sqrt(sum / readBytes);
 
                 if (rms > NOISE_THRESHOLD) {
-                    mMainHandler.post(() -> mStatusTextView.setText("🎙️ Usan正在接收聲音... (dB)"));
+                    mMainHandler.post(() -> mStatusTextView.setText("🎙️ [Usan test]正在接收聲音... (dB)"));
                 } else {
-                    mMainHandler.post(() -> mStatusTextView.setText("🎙️ Usan正在傾聽中..."));
+                    mMainHandler.post(() -> mStatusTextView.setText("🎙️ [Usan test]正在傾聽中..."));
                 }
             }
         }
@@ -176,6 +192,13 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
             }
             mAudioRecord.release();
             mAudioRecord = null;
+        }
+
+        // --- Release AEC ---
+        if (mAec != null) {
+            mAec.release();
+            mAec = null;
+            Log.d(TAG, "AEC released");
         }
 
         // Add: Process and update WAV file header
