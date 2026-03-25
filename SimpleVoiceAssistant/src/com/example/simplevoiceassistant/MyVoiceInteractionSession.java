@@ -124,7 +124,7 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
 
             mAudioRecord.startRecording();
             mIsRecording = true;
-            updateUiText("🎙️ [Usan test]正在傾聽中...");
+            updateUiText("🎙️ [Usan test]準備開始錄音...");
 
             mRecordThread = new Thread(this::recordLoop);
             mRecordThread.start();
@@ -167,6 +167,12 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
                 } else {
                     mMainHandler.post(() -> mStatusTextView.setText("🎙️ [Usan test]正在傾聽中..."));
                 }
+            } else {
+                Log.e(TAG, "AudioRecord read failed! Return code: " + readBytes);
+                mMainHandler.post(() -> mStatusTextView.setText("❌ 底層硬體讀取異常 (代碼: " + readBytes + ")"));
+                try {
+                    Thread.sleep(1000); // 避免無窮迴圈洗爆 log
+                } catch (InterruptedException e) {}
             }
         }
     }

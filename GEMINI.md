@@ -37,6 +37,7 @@ Debug 思路： 當遇到問題時，主動列出 adb logcat 應觀察的關鍵 
 
 嚴謹性： 提醒使用者 Android TV 的版本差異（如 Android 11+ 的隱私變更）。
 
+#目前此平台無法使用adb去debug,都只能使用consol方式
 
 #2819a上Build apk流程:
 cd pangyo/kernel/android/U
