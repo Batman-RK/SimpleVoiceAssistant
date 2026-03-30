@@ -99,9 +99,10 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
             mFileOutputStream.write(headerBlank);
             mTotalAudioLen = 0;
 
+            
             int minBufferSize = AudioRecord.getMinBufferSize(SAMPLE_RATE, CHANNEL, ENCODING);
-            mAudioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC, 
-                    SAMPLE_RATE, CHANNEL, ENCODING, minBufferSize);
+            mAudioRecord = new AudioRecord(MediaRecorder.AudioSource.VOICE_COMMUNICATION,
+                    SAMPLE_RATE, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT, minBufferSize);
 
             if (mAudioRecord.getState() != AudioRecord.STATE_INITIALIZED) {
                 Log.e(TAG, "AudioRecord initialization failed!");
@@ -109,22 +110,36 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
                 return;
             }
 
+            int sessionId = mAudioRecord.getAudioSessionId();
+            Log.d(TAG, "AudioRecord initialized with Session ID: " + sessionId);
+
             // --- Enable AEC (Acoustic Echo Canceler) ---
-            if (android.media.audiofx.AcousticEchoCanceler.isAvailable()) {
-                mAec = android.media.audiofx.AcousticEchoCanceler.create(mAudioRecord.getAudioSessionId());
-                if (mAec != null) {
-                    mAec.setEnabled(true);
-                    Log.d(TAG, "AEC successfully enabled!");
-                } else {
-                    Log.e(TAG, "Hardware supports AEC, but failed to create AEC instance.");
+            boolean isAecAvailable = android.media.audiofx.AcousticEchoCanceler.isAvailable();
+            Log.d(TAG, "AcousticEchoCanceler.isAvailable(): " + isAecAvailable);
+
+            if (isAecAvailable) {
+                try {
+                    mAec = android.media.audiofx.AcousticEchoCanceler.create(sessionId);
+                    if (mAec != null) {
+                        int enabledStatus = mAec.setEnabled(true);
+                        Log.d(TAG, "AEC instance created. setEnabled(true) returned: " + enabledStatus);
+                        if (enabledStatus != android.media.audiofx.AudioEffect.SUCCESS) {
+                            Log.e(TAG, "Failed to enable AEC!");
+                        }
+                    } else {
+                        Log.e(TAG, "AcousticEchoCanceler.create() returned null!");
+                    }
+                } catch (Exception e) {
+                    Log.e(TAG, "Exception creating AEC: " + e.getMessage());
                 }
             } else {
-                Log.w(TAG, "Hardware doesn't support AEC.");
+                Log.w(TAG, "Hardware/AOSP doesn't report AEC support.");
             }
+
 
             mAudioRecord.startRecording();
             mIsRecording = true;
-            updateUiText("🎙️ [Usan test]正在傾聽中...");
+            updateUiText("🎙️ [Usan test]準備開始錄音...");
 
             mRecordThread = new Thread(this::recordLoop);
             mRecordThread.start();
@@ -167,6 +182,12 @@ public class MyVoiceInteractionSession extends VoiceInteractionSession {
                 } else {
                     mMainHandler.post(() -> mStatusTextView.setText("🎙️ [Usan test]正在傾聽中..."));
                 }
+            } else {
+                Log.e(TAG, "AudioRecord read failed! Return code: " + readBytes);
+                mMainHandler.post(() -> mStatusTextView.setText("❌ 底層硬體讀取異常 (代碼: " + readBytes + ")"));
+                try {
+                    Thread.sleep(1000); // 避免無窮迴圈洗爆 log
+                } catch (InterruptedException e) {}
             }
         }
     }

@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
+#include <math.h>
 #include <stdlib.h>
 #include <string.h>
 #define LOG_TAG "PreProcessing"
-//#define LOG_NDEBUG 0
+#define LOG_NDEBUG 0
 #include <audio_effects/effect_aec.h>
 #include <audio_effects/effect_agc.h>
 #include <hardware/audio_effect.h>
@@ -1084,6 +1085,16 @@ int PreProcessingFx_Process(effect_handle_t self, audio_buffer_t* inBuffer,
             ALOGE("Process Stream failed with error %d\n", status);
             return status;
         }
+
+        static int process_count = 0;
+        if (process_count++ % 100 == 0) {
+            long long sum = 0;
+            for (size_t i = 0; i < session->frameCount; i++) {
+                sum += (long long)inBuffer->s16[i] * inBuffer->s16[i];
+            }
+            int rms = (int)sqrt(sum / session->frameCount);
+            ALOGE("AEC_DEBUG_MIC: RMS=%d (Session %d)", rms, session->id);
+        }
         return 0;
     } else {
         return -ENODATA;
@@ -1486,6 +1497,16 @@ int PreProcessingFx_ProcessReverse(effect_handle_t self, audio_buffer_t* inBuffe
             status != 0) {
             ALOGE("Process Reverse Stream failed with error %d\n", status);
             return status;
+        }
+
+        static int rev_process_count = 0;
+        if (rev_process_count++ % 100 == 0) {
+            long long sum = 0;
+            for (size_t i = 0; i < session->frameCount; i++) {
+                sum += (long long)inBuffer->s16[i] * inBuffer->s16[i];
+            }
+            int rms = (int)sqrt(sum / session->frameCount);
+            ALOGE("AEC_DEBUG_SPEAKER_REF: RMS=%d (Session %d)", rms, session->id);
         }
         return 0;
     } else {

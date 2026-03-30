@@ -54,3 +54,13 @@ time ./build_android.sh -p dias_halo_2819a_k515.cfg -c n -v userdebug -j $(nproc
 #編輯2819a 的aosp soruce code的 pangyo\kernel\android\U\frameworks\av\media\libeffects\data\audio_effects.xml" AcousticEchoCanceler.isAvailable就會回傳true了
 <library name="pre_processing" path="libaudiopreprocessing.so"/>
 <effect name="aec" library="pre_processing" uuid="bb392ec0-8d4d-11e0-a896-0002a5d5c51b"/>
+
+#2819a 的aosp soruce code路徑
+audio_effects.xml
+kernel\android\U\frameworks\av\media\libeffects\data
+ 
+PreProcessing.cpp
+kernel\android\U\frameworks\av\media\libeffects\preprocessing
+
+device.mk 
+kernel/android/U/device/realtek/purplediamond64/shared/

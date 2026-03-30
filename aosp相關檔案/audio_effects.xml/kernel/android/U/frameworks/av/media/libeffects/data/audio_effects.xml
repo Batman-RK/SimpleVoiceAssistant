@@ -82,13 +82,6 @@
             </stream>
         </preprocess>
     -->
-        <preprocess>
-            <stream type="mic">
-                <apply effect="aec"/>
-		<apply effect="agc"/>
-                <apply effect="ns"/>
-            </stream>
-        </preprocess>
     <!-- Audio post processor configurations.
          The post processor configuration is described in a "postprocess" element and consists in a
          list of elements each describing post processor settings for a given use case or "stream".
@@ -137,5 +130,7 @@
             </devicePort>
         </deviceEffects>
     -->
+
+
 
 </audio_effects_conf>

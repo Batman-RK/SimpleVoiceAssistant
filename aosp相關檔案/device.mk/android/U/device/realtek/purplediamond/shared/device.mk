@@ -1,42 +1,14 @@
-ZYGOTE_FORCE_64 := true
-
 TARGET_BOARD_PLATFORM := rtd2819a
 
+#===================== purplediamond_base.mk common part =====================
+# GTVS mainline modules are common to both the Watson version and Amati version
+$(call inherit-product, device/google/atv/products/atv_base.mk)
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 #======================== device.mk common part =======================
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-
-ifeq ($(BUILD_AS_TABLET), true)
-
-$(warning tablet launcher)
-# Setup tablet build
-$(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
-
-# PRODUCT_PACKAGES += Launcher3QuickStep
-
-$(call inherit-product, device/realtek/common/product/edla/tablet_atv_base.mk)
-# mark this and include atv_base to build as tv
-# $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.app_widgets.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.app_widgets.xml
-
-PRODUCT_PACKAGE_OVERLAYS += device/realtek/purplediamond64/purplediamond64/overlay
-
-# USE_OEM_TV_APP := true
-#===================== purplediamond_base.mk common part =====================
-# GTVS mainline modules are common to both the Watson version and Amati version
-# $(call inherit-product, device/google/atv/products/atv_base.mk)
-
-else
-# Setup TV Build
 USE_OEM_TV_APP := true
-#===================== purplediamond_base.mk common part =====================
-# GTVS mainline modules are common to both the Watson version and Amati version
-$(call inherit-product, device/google/atv/products/atv_base.mk)
-endif
 RTK_TV_SYSTEM := all
 
 # Prebuilt binary path
@@ -48,14 +20,14 @@ PRODUCT_SHIPPING_API_LEVEL := 34
 TARGET_SHIPPING_API_LEVEL := $(PRODUCT_SHIPPING_API_LEVEL)
 
 # 3rd party modules are moved under vendor/realtek/<device>
-VENDOR_DEVICE_PATH     := vendor/realtek/purplediamond64
+VENDOR_DEVICE_PATH     := vendor/realtek/purplediamond
 RTK_DEVICE_THIRD_PARTY_PATH := $(VENDOR_DEVICE_PATH)/third_party/current
 
 # Include RTK configs
 include device/realtek/common/product/pre-config.mk
 RTK_TV_CONFIG_HW       := $(RTK_FRAMEWORKS_PATH)/$(RTK_FRAMEWORKS_CONFIG_SUB_PATH)/configs/defconfig/hw/hw_2819a
 RTK_TV_CONFIG_SYSTEM   := $(RTK_FRAMEWORKS_PATH)/$(RTK_FRAMEWORKS_CONFIG_SUB_PATH)/configs/defconfig/system/system_pie_std
-RTK_TV_CONFIG_TVSYSTEM := $(RTK_FRAMEWORKS_PATH)/$(RTK_FRAMEWORKS_CONFIG_SUB_PATH)/configs/defconfig/tvsystem/tvsystem_64bit
+RTK_TV_CONFIG_TVSYSTEM := $(RTK_FRAMEWORKS_PATH)/$(RTK_FRAMEWORKS_CONFIG_SUB_PATH)/configs/defconfig/tvsystem/tvsystem_all
 RTK_TV_CONFIG_MEDIA    := $(RTK_FRAMEWORKS_PATH)/$(RTK_FRAMEWORKS_CONFIG_SUB_PATH)/configs/defconfig/media/media_std
 include $(RTK_FRAMEWORKS_CONFIG_PATH)/version.mk
 include $(RTK_FRAMEWORKS_CONFIG_PATH)/config.mk
@@ -74,9 +46,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.level-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.level.xml \
     frameworks/native/data/etc/android.hardware.vulkan.compute-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.compute.xml \
     frameworks/native/data/etc/android.software.opengles.deqp.level-2023-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml
-
-PRODUCT_VENDOR_PROPERTIES += \
-    graphics.gpu.profiler.support=true
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:system/etc/permissions/android.software.freeform_window_management.xml
@@ -193,8 +162,8 @@ PRODUCT_COPY_FILES += \
 endif
 
 # overlay
-# PRODUCT_PACKAGES += \
-#     RtkFrameworkOverlayAOSP
+PRODUCT_PACKAGES += \
+    RtkFrameworkOverlayAOSP
 
 # llkd Configuration
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -264,19 +233,13 @@ PRODUCT_PRODUCT_VNDK_VERSION := current
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.apk_verity.mode=2 \
 
-# Arm64, this must be before other product mks
-$(call inherit-product, device/realtek/common/product/rtk_base_arm64.mk)
-$(call inherit-product, device/realtek/common/product/rtk_edla.mk)
+# Enable WOL/WOV magic packet
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.vendor.rtk.power.magic_packet_screen_on=true \
+    persist.vendor.rtk.power.skip_screen_on=false
 
-ifeq ($(BUILD_AS_TABLET),true)
-NEED_RTK_MODULES := false
-$(call inherit-product, device/realtek/common/product/edla/rtk_tablet_dias_base.mk)
-$(call inherit-product, device/realtek/common/product/edla/rtk_tablet_modules.mk)
-else
-# Dias TV Base
+# Dias
 $(call inherit-product, device/realtek/common/product/rtk_dias_base.mk)
-endif
-
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/userspace_reboot.mk)
 $(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-heap.mk)
@@ -294,16 +257,9 @@ $(call inherit-product-if-exists, vendor/realtek/common/ATV/hardware/current/mtk
 $(call inherit-product, device/realtek/common/product/rtk_wifi.mk)
 $(call inherit-product, device/realtek/common/product/rtk_common.mk)
 $(call inherit-product, device/realtek/common/product/rtk_base.mk)
-
-ifeq ($(BUILD_AS_TABLET), true)
-PRODUCT_PACKAGES += DhcpClientd
-else
 $(call inherit-product, device/realtek/common/product/rtk_demeter_base.mk)
-endif
-
-
 $(call inherit-product, device/realtek/common/product/rtk_media.mk)
-#$(call inherit-product, device/realtek/common/product/rtk_farfield.mk)
+$(call inherit-product, device/realtek/common/product/rtk_farfield.mk)
 $(call inherit-product, device/realtek/common/product/display/rtk_display_xhdpi.mk)
 $(call inherit-product-if-exists, $(VENDOR_DEVICE_PATH)/third_party/hbbtv/hbbtv.mk)
 $(call inherit-product-if-exists, vendor/realtek/8k_codec/rtk_8kcodec.mk)
@@ -321,7 +277,7 @@ ifeq ($(MDNS_OFFLOAD_SUPPORT),true)
 endif
 
 # Graphic
-$(call inherit-product, vendor/realtek/common/graphic/products/24.2_RTM2_6643903_rtd2819a_arm64.mk)
+$(call inherit-product, vendor/realtek/common/graphic/products/24.2_RTM2_6643903_rtd2819a.mk)
 
 OPTEE_PLATFORM_FLAVOR := $(TARGET_BOARD_PLATFORM)
 RTK_TEE_TOOLCHAIN_NAME := asdk-6.4.1-a55-EL-4.4-g2.26-a32nut-170810
@@ -357,4 +313,11 @@ PRODUCT_ENFORCE_PRODUCT_PARTITION_INTERFACE := true
 
 # Set system properties identifying the chipset
 PRODUCT_VENDOR_PROPERTIES += ro.soc.manufacturer=Realtek
-PRODUCT_VENDOR_PROPERTIES += ro.soc.model=RTD2895P
+PRODUCT_VENDOR_PROPERTIES += ro.soc.model=RTD2819A
+
+# RTK image confis
+ifeq ($(RTK_BUILT_IN_KERNEL_MODULES),true)
+$(call dist-for-goals, droid, device/realtek/purplediamond/shared/rtk-image-configs-built-in.json:rtk-image-configs.json)
+else
+$(call dist-for-goals, droid, device/realtek/purplediamond/shared/rtk-image-configs.json)
+endif
