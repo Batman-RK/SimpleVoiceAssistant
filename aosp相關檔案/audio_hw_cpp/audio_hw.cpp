@@ -3917,6 +3917,10 @@ static int adev_open_input_stream(struct audio_hw_device* dev,
   resetAudioDebug();
   AUDIO_FUNC_ENTER
   ALOGD("%s start", __FUNCTION__);
+  if (devices & AUDIO_DEVICE_IN_ECHO_REFERENCE) {
+    ALOGE("DEBUG_AEC: System is trying to open Echo Reference! Req Format: 0x%x, SR: %u, ChannelMask: 0x%x",
+          config->format, config->sample_rate, config->channel_mask);
+  }
   auto wrapDev = rtk::media::audio::DeviceManager::get(devices);
   if (!wrapDev) {
     ALOGI("%s: ignore devices=0x%x", __FUNCTION__, devices);
@@ -3925,7 +3929,10 @@ static int adev_open_input_stream(struct audio_hw_device* dev,
   int ret = wrapDev->openInputStream(dev, handle, devices, config, streamIn,
                                      flags, address, source);
   if (ret != -ENOTSUP) {
-    ALOGD("%s end", __FUNCTION__);
+    if (devices & AUDIO_DEVICE_IN_ECHO_REFERENCE) {
+      ALOGE("DEBUG_AEC: Echo Reference openInputStream result: %d", ret);
+    }
+    ALOGD("%s end, ret = %d", __FUNCTION__, ret);
     return ret;
   }
 

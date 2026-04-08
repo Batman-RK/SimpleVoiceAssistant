@@ -1,0 +1,239 @@
+
+[Wed Apr 01 14:49:23.896 2026] cmd voiceinteraction show
+[Wed Apr 01 14:49:24.990 2026] console:/ # logcat | grep -iE "(PreProcessing|audio_hw|AEC_DEBUG|AcousticEchoC -iE "(PreProcessing|audio_hw|AEC_DEBUG|AcousticEchoC                         <anceler|SimpleAssistantSeo_hw|AEC_DEBUG|AcousticEchoCanceler|SimpleAssistantSe                         <ssion)"
+[Wed Apr 01 14:49:44.084 2026] 03-27 10:32:15.597   592   831 I AUDIO   : +++ KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.094 2026] 03-27 10:32:15.597   592   831 I AUDIO   : --- KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.099 2026] 03-27 10:32:15.597   592   831 I AUDIO   : +++ KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.104 2026] 03-27 10:32:15.597   592   831 I AUDIO   : --- KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.107 2026] 03-27 10:32:16.002   592   831 I AUDIO   : +++ KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.115 2026] 03-27 10:32:16.003   592   831 I AUDIO   : --- KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.120 2026] 03-27 10:32:16.003   592   831 I AUDIO   : +++ KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.126 2026] 03-27 10:32:16.003   592   831 I AUDIO   : --- KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.139 2026] 03-27 10:32:16.196   592   831 I AUDIO   : +++ KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.143 2026] 03-27 10:32:16.196   592   831 I AUDIO   : --- KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.147 2026] 03-27 10:32:16.196   592   831 I AUDIO   : +++ KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.151 2026] 03-27 10:32:16.196   592   831 I AUDIO   : --- KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.162 2026] 03-27 10:32:16.375   592   592 I AUDIO   : +++ KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.162 2026] 03-27 10:32:16.376   592   592 I AUDIO   : --- KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.172 2026] 03-27 10:32:16.376   592   592 I AUDIO   : +++ KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.178 2026] 03-27 10:32:16.376   592   592 I AUDIO   : --- KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.185 2026] 03-27 10:32:16.583   592   592 I AUDIO   : +++ KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.193 2026] 03-27 10:32:16.583   592   592 I AUDIO   : --- KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.200 2026] 03-27 10:32:16.583   592   592 I AUDIO   : +++ KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.204 2026] 03-27 10:32:16.583   592   592 I AUDIO   : --- KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.212 2026] 03-27 10:32:16.792   592   831 I AUDIO   : +++ KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.220 2026] 03-27 10:32:16.792   592   831 I AUDIO   : --- KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.226 2026] 03-27 10:32:16.792   592   831 I AUDIO   : +++ KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.232 2026] 03-27 10:32:16.793   592   831 I AUDIO   : --- KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.241 2026] 03-27 10:32:17.037   592   831 I AUDIO   : +++ KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.244 2026] 03-27 10:32:17.038   592   831 I AUDIO   : --- KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.251 2026] 03-27 10:32:17.038   592   831 I AUDIO   : +++ KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.258 2026] 03-27 10:32:17.038   592   831 I AUDIO   : --- KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.262 2026] 03-27 10:32:17.415   592   831 I AUDIO   : +++ KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.273 2026] 03-27 10:32:17.415   592   831 I AUDIO   : --- KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.276 2026] 03-27 10:32:17.415   592   831 I AUDIO   : +++ KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.285 2026] 03-27 10:32:17.415   592   831 I AUDIO   : --- KADP_Audio_HwpSetVolume()
+[Wed Apr 01 14:49:44.290 2026] 03-27 10:32:44.166  2262  2262 D SimpleAssistantSession: onShow: Session is VISIBLE. Starting recording...
+[Wed Apr 01 14:49:44.300 2026] 03-27 10:32:44.181  2471  2514 D rtk_audio_hw: get_input_buffer_size:selectMic[779]: MICCAP
+[Wed Apr 01 14:49:44.309 2026] 03-27 10:32:44.182  2471  2514 D rtk_audio_hw: get_input_buffer_size: mic_property: INMIC
+[Wed Apr 01 14:49:44.319 2026] 03-27 10:32:44.182  2471  2514 D rtk_audio_hw: get_input_buffer_size = 1024
+[Wed Apr 01 14:49:44.321 2026] 03-27 10:32:44.192  2471  2514 D rtk_audio_hw: adev_open_input_stream start
+[Wed Apr 01 14:49:44.332 2026] 03-27 10:32:44.192  2471  2514 D rtk_audio_hw: adev_open_input_stream end
+[Wed Apr 01 14:49:44.337 2026] 03-27 10:32:44.192  2471  2514 D rtk_audio_hw: adev_open_input_stream start
+[Wed Apr 01 14:49:44.344 2026] 03-27 10:32:44.193  2471  2514 D rtk_audio_hw: adev_open_input_stream end
+[Wed Apr 01 14:49:44.351 2026] 03-27 10:32:44.200  2262  2262 D SimpleAssistantSession: AudioRecord initialized with Session ID: 825
+[Wed Apr 01 14:49:44.361 2026] 03-27 10:32:44.206  2262  2262 D SimpleAssistantSession: AcousticEchoCanceler.isAvailable(): true
+[Wed Apr 01 14:49:44.370 2026] 03-27 10:32:44.209  2471  2514 V PreProcessing: EffectCreate: uuid: bb392ec0 session 825 IO: 54
+[Wed Apr 01 14:49:44.376 2026] 03-27 10:32:44.209  2471  2514 V PreProcessing: Session_CreateEffect procId 2, createdMsk 00000000
+[Wed Apr 01 14:49:44.382 2026] 03-27 10:32:44.210  2471  2514 V PreProcessing: Effect_SetState proc 2, new 1 old 0
+[Wed Apr 01 14:49:44.393 2026] 03-27 10:32:44.210  2471  2514 V PreProcessing: AecInit
+[Wed Apr 01 14:49:44.401 2026] 03-27 10:32:44.210  2471  2514 V PreProcessing: Session_CreateEffect OK
+[Wed Apr 01 14:49:44.404 2026] 03-27 10:32:44.213  2471  2514 V PreProcessing: AecInit
+[Wed Apr 01 14:49:44.412 2026] 03-27 10:32:44.214  2471  2514 V PreProcessing: Session_SetConfig sr 16000 cnl 0000000c
+[Wed Apr 01 14:49:44.420 2026] 03-27 10:32:44.214  2471  2514 V PreProcessing: Effect_SetState proc 2, new 2 old 1
+[Wed Apr 01 14:49:44.426 2026] 03-27 10:32:44.216  2471  2477 V PreProcessing: Session_SetConfig sr 16000 cnl 0000000c
+[Wed Apr 01 14:49:44.432 2026] 03-27 10:32:44.216  2471  2477 V PreProcessing: Effect_SetState proc 2, new 2 old 2
+[Wed Apr 01 14:49:44.440 2026] 03-27 10:32:44.219  2262  2262 D SimpleAssistantSession: AEC instance created. setEnabled(true) returned: 0
+[Wed Apr 01 14:49:44.451 2026] 03-27 10:32:44.222  2471  2477 V PreProcessing: AecSetDevice 80000004
+[Wed Apr 01 14:49:44.455 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: adev_create_audio_patch: handle:0
+[Wed Apr 01 14:49:44.462 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: before addNewPatch: handle=0, numSources=1,numSinks=1
+[Wed Apr 01 14:49:44.475 2026] 03-27 10:32:44.222  2471  2477 D rtk_audio_hw_patch: dump ----------------patchManager!----------------totalcount:2
+[Wed Apr 01 14:49:44.488 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: patch .....0..... ,handle:1
+[Wed Apr 01 14:49:44.493 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: source type:AUDIO_PORT_TYPE_MIX: source[0] handle:0xd,usecase:-1
+[Wed Apr 01 14:49:44.503 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: sink type:AUDIO_PORT_TYPE_DEVICE: sink[0] device:0x2,address:
+[Wed Apr 01 14:49:44.512 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: patch .....1..... ,handle:2
+[Wed Apr 01 14:49:44.520 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: source type:AUDIO_PORT_TYPE_MIX: source[0] handle:0x15,usecase:-1
+[Wed Apr 01 14:49:44.532 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: sink type:AUDIO_PORT_TYPE_DEVICE: sink[0] device:0x2,address:
+[Wed Apr 01 14:49:44.543 2026] 03-27 10:32:44.222  2471  2477 D rtk_audio_hw_patch: enddump ----------------patchManager!----------------
+[Wed Apr 01 14:49:44.551 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: port: id:10, role:1, type:1, config_mask:7, sample_rate:16000, channel_mask:0xc, format:0x1, gain.index:0
+[Wed Apr 01 14:49:44.562 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: source[0]: port type:AUDIO_PORT_TYPE_DEVICE: device:0x80000004,address:bottom
+[Wed Apr 01 14:49:44.576 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: port: id:21, role:2, type:2, config_mask:7, sample_rate:16000, channel_mask:0xc, format:0x1, gain.index:0
+[Wed Apr 01 14:49:44.592 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: sink[0]: port type:AUDIO_PORT_TYPE_MIX: hw_module:0, handle:0x36,usecase:7
+[Wed Apr 01 14:49:44.604 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: checkPatchExists: bRet:0
+[Wed Apr 01 14:49:44.608 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: after addNewPatch: handle=4, numSources=1,numSinks=1
+[Wed Apr 01 14:49:44.620 2026] 03-27 10:32:44.222  2471  2477 D rtk_audio_hw_patch: dump ----------------patchManager!----------------totalcount:3
+[Wed Apr 01 14:49:44.630 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: patch .....0..... ,handle:1
+[Wed Apr 01 14:49:44.635 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: source type:AUDIO_PORT_TYPE_MIX: source[0] handle:0xd,usecase:-1
+[Wed Apr 01 14:49:44.649 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: sink type:AUDIO_PORT_TYPE_DEVICE: sink[0] device:0x2,address:
+[Wed Apr 01 14:49:44.654 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: patch .....1..... ,handle:2
+[Wed Apr 01 14:49:44.666 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: source type:AUDIO_PORT_TYPE_MIX: source[0] handle:0x15,usecase:-1
+[Wed Apr 01 14:49:44.676 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: sink type:AUDIO_PORT_TYPE_DEVICE: sink[0] device:0x2,address:
+[Wed Apr 01 14:49:44.687 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: patch .....2..... ,handle:4
+[Wed Apr 01 14:49:44.693 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: source type:AUDIO_PORT_TYPE_DEVICE: source[0] device:0x80000004,address:bottom
+[Wed Apr 01 14:49:44.705 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: sink type:AUDIO_PORT_TYPE_MIX: sink[0] handle:0x36,usecase:7
+[Wed Apr 01 14:49:44.716 2026] 03-27 10:32:44.222  2471  2477 D rtk_audio_hw_patch: enddump ----------------patchManager!----------------
+[Wed Apr 01 14:49:44.724 2026] 03-27 10:32:44.222  2471  2477 I rtk_audio_hw_patch: create_audio_patch done
+[Wed Apr 01 14:49:44.732 2026] 03-27 10:32:44.225  2471  2477 V PreProcessing: Effect_SetState proc 2, new 3 old 2
+[Wed Apr 01 14:49:44.740 2026] 03-27 10:32:44.225  2471  2477 V PreProcessing: Session_SetProcEnabled proc 2, enabled 1 enabledMsk 00000004 revEnabledMsk 00000004
+[Wed Apr 01 14:49:44.751 2026] 03-27 10:32:44.680  2665  2665 I rtk_audio_hw: a2dp_device_open, open a2dp module audio.bluetooth-rtk, dev=0xe87809b0
+[Wed Apr 01 14:49:44.762 2026] 03-27 10:32:44.684  2665  2665 I rtk_audio_hw: usb_device_open, open usb module audio.usb-rtk, dev=0xe97c2fe0
+[Wed Apr 01 14:49:44.772 2026] 03-27 10:32:44.684  2665  2665 D rtk_audio_hw: Start detect alsa cards
+[Wed Apr 01 14:49:44.778 2026] 03-27 10:32:44.684  2665  2665 D rtk_audio_hw: Line 0: 0 [Mars           ]: Mars - Mars
+[Wed Apr 01 14:49:44.788 2026] 03-27 10:32:44.684  2665  2665 D rtk_audio_hw: token1 0:0
+[Wed Apr 01 14:49:44.788 2026] 03-27 10:32:44.684  2665  2665 D rtk_audio_hw: token2 Mars:0
+[Wed Apr 01 14:49:44.797 2026] 03-27 10:32:44.684  2665  2665 D rtk_audio_hw: find alsa card number 0
+[Wed Apr 01 14:49:44.804 2026] 03-27 10:32:44.684  2665  2665 D rtk_audio_hw: End detect alsa cards
+[Wed Apr 01 14:49:44.809 2026] 03-27 10:32:44.698  2665  2665 D rtk_audio_hw: profile, adev_open:4406,time=18 ms
+[Wed Apr 01 14:49:44.818 2026] 03-27 10:32:44.699  2665  2665 D rtk_audio_hw: adev_get_parameters, keys: isBtVariableLatencySupported, ret: 
+[Wed Apr 01 14:49:44.826 2026] 03-27 10:32:44.701  2665  2665 I rtk_audio_hw: adev_open_output_stream handle:d, flags=0x2, format:0x1, rate:48000 channel:0x3, devices:0x2
+[Wed Apr 01 14:49:44.841 2026] 03-27 10:32:44.701  2665  2665 I rtk_audio_hw: adev_open_output_stream aos=0xe86c4dac, handle:d, flags=0x2, format:0x1, rate:48000 channel:0x3, devices:0x2
+[Wed Apr 01 14:49:44.854 2026] 03-27 10:32:44.708  2665  2665 V PreProcessing: PreProcessingLib_GetDescriptor() got fx Automatic Gain Control
+[Wed Apr 01 14:49:44.861 2026] 03-27 10:32:44.708  2665  2665 V PreProcessing: PreProcessingLib_GetDescriptor() got fx Acoustic Echo Canceler
+[Wed Apr 01 14:49:44.875 2026] 03-27 10:32:44.708  2665  2665 V PreProcessing: PreProcessingLib_GetDescriptor() got fx Noise Suppression
+[Wed Apr 01 14:49:44.883 2026] 03-27 10:32:44.710  2665  2665 D rtk_audio_hw: adev_get_parameters, keys: routing=2;supEncapsulationMetadataTypes;supEncapsulationModes, ret: 
+[Wed Apr 01 14:49:44.897 2026] 03-27 10:32:44.772  2665  2665 I rtk_audio_hw_patch: adev_create_audio_patch: handle:0
+[Wed Apr 01 14:49:44.904 2026] 03-27 10:32:44.772  2665  2665 I rtk_audio_hw_patch: before addNewPatch: handle=0, numSources=1,numSinks=1
+[Wed Apr 01 14:49:44.912 2026] 03-27 10:32:44.772  2665  2665 D rtk_audio_hw_patch: dump ----------------patchManager!----------------totalcount:0
+[Wed Apr 01 14:49:44.925 2026] 03-27 10:32:44.772  2665  2665 D rtk_audio_hw_patch: enddump ----------------patchManager!----------------
+[Wed Apr 01 14:49:44.932 2026] 03-27 10:32:44.772  2665  2665 I rtk_audio_hw_patch: port: id:1, role:1, type:2, config_mask:7, sample_rate:48000, channel_mask:0x3, format:0x1, gain.index:0
+[Wed Apr 01 14:49:44.947 2026] 03-27 10:32:44.772  2665  2665 I rtk_audio_hw_patch: source[0]: port type:AUDIO_PORT_TYPE_MIX: hw_module:0, handle:0xd,usecase:-1
+[Wed Apr 01 14:49:44.954 2026] 03-27 10:32:44.772  2665  2665 I rtk_audio_hw_patch: port: id:2, role:2, type:1, config_mask:0, sample_rate:0, channel_mask:0x0, format:0x0, gain.index:0
+[Wed Apr 01 14:49:44.971 2026] 03-27 10:32:44.772  2665  2665 I rtk_audio_hw_patch: sink[0]: port type:AUDIO_PORT_TYPE_DEVICE: device:0x2,address:
+[Wed Apr 01 14:49:44.982 2026] 03-27 10:32:44.772  2665  2665 I rtk_audio_hw_patch: checkPatchExists: bRet:0
+[Wed Apr 01 14:49:44.992 2026] 03-27 10:32:44.772  2665  2665 I rtk_audio_hw_patch: after addNewPatch: handle=1, numSources=1,numSinks=1
+[Wed Apr 01 14:49:44.998 2026] 03-27 10:32:44.772  2665  2665 D rtk_audio_hw_patch: dump ----------------patchManager!----------------totalcount:1
+[Wed Apr 01 14:49:45.008 2026] 03-27 10:32:44.772  2665  2665 I rtk_audio_hw_patch: patch .....0..... ,handle:1
+[Wed Apr 01 14:49:45.018 2026] 03-27 10:32:44.772  2665  2665 I rtk_audio_hw_patch: source type:AUDIO_PORT_TYPE_MIX: source[0] handle:0xd,usecase:-1
+[Wed Apr 01 14:49:45.026 2026] 03-27 10:32:44.772  2665  2665 I rtk_audio_hw_patch: sink type:AUDIO_PORT_TYPE_DEVICE: sink[0] device:0x2,address:
+[Wed Apr 01 14:49:45.040 2026] 03-27 10:32:44.772  2665  2665 D rtk_audio_hw_patch: enddump ----------------patchManager!----------------
+[Wed Apr 01 14:49:45.046 2026] 03-27 10:32:44.772  2665  2665 I rtk_audio_hw_patch: create_audio_patch done
+[Wed Apr 01 14:49:45.055 2026] 03-27 10:32:44.774  2665  2665 I rtk_audio_hw: adev_open_output_stream handle:15, flags=0x8, format:0x1, rate:48000 channel:0x63f, devices:0x2
+[Wed Apr 01 14:49:45.068 2026] 03-27 10:32:44.774  2665  2665 I rtk_audio_hw: adev_open_output_stream aos=0xe86c40fc, handle:15, flags=0x8, format:0x1, rate:48000 channel:0x63f, devices:0x2
+[Wed Apr 01 14:49:45.082 2026] 03-27 10:32:44.821  2665  2672 I rtk_audio_hw_patch: adev_create_audio_patch: handle:0
+[Wed Apr 01 14:49:45.092 2026] 03-27 10:32:44.821  2665  2672 I rtk_audio_hw_patch: before addNewPatch: handle=0, numSources=1,numSinks=1
+[Wed Apr 01 14:49:45.097 2026] 03-27 10:32:44.821  2665  2672 D rtk_audio_hw_patch: dump ----------------patchManager!----------------totalcount:1
+[Wed Apr 01 14:49:45.108 2026] 03-27 10:32:44.821  2665  2672 I rtk_audio_hw_patch: patch .....0..... ,handle:1
+[Wed Apr 01 14:49:45.118 2026] 03-27 10:32:44.821  2665  2672 I rtk_audio_hw_patch: source type:AUDIO_PORT_TYPE_MIX: source[0] handle:0xd,usecase:-1
+[Wed Apr 01 14:49:45.126 2026] 03-27 10:32:44.821  2665  2672 I rtk_audio_hw_patch: sink type:AUDIO_PORT_TYPE_DEVICE: sink[0] device:0x2,address:
+[Wed Apr 01 14:49:45.134 2026] 03-27 10:32:44.821  2665  2672 D rtk_audio_hw_patch: enddump ----------------patchManager!----------------
+[Wed Apr 01 14:49:45.147 2026] 03-27 10:32:44.821  2665  2672 I rtk_audio_hw_patch: port: id:4, role:1, type:2, config_mask:7, sample_rate:48000, channel_mask:0x63f, format:0x1, gain.index:0
+[Wed Apr 01 14:49:45.162 2026] 03-27 10:32:44.821  2665  2672 I rtk_audio_hw_patch: source[0]: port type:AUDIO_PORT_TYPE_MIX: hw_module:0, handle:0x15,usecase:-1
+[Wed Apr 01 14:49:45.175 2026] 03-27 10:32:44.821  2665  2672 I rtk_audio_hw_patch: port: id:2, role:2, type:1, config_mask:0, sample_rate:0, channel_mask:0x0, format:0x0, gain.index:0
+[Wed Apr 01 14:49:45.186 2026] 03-27 10:32:44.821  2665  2672 I rtk_audio_hw_patch: sink[0]: port type:AUDIO_PORT_TYPE_DEVICE: device:0x2,address:
+[Wed Apr 01 14:49:45.197 2026] 03-27 10:32:44.821  2665  2672 I rtk_audio_hw_patch: rmDevicePatch: mPatchMap.valueAt(0)->mSinks[0].ext.device.type=2
+[Wed Apr 01 14:49:45.207 2026] 03-27 10:32:44.821  2665  2672 I rtk_audio_hw_patch: checkPatchExists: bRet:0
+[Wed Apr 01 14:49:45.213 2026] 03-27 10:32:44.821  2665  2672 I rtk_audio_hw_patch: after addNewPatch: handle=2, numSources=1,numSinks=1
+[Wed Apr 01 14:49:45.226 2026] 03-27 10:32:44.821  2665  2672 D rtk_audio_hw_patch: dump ----------------patchManager!----------------totalcount:2
+[Wed Apr 01 14:49:45.234 2026] 03-27 10:32:44.821  2665  2672 I rtk_audio_hw_patch: patch .....0..... ,handle:1
+[Wed Apr 01 14:49:45.243 2026] 03-27 10:32:44.821  2665  2672 I rtk_audio_hw_patch: source type:AUDIO_PORT_TYPE_MIX: source[0] handle:0xd,usecase:-1
+[Wed Apr 01 14:49:45.254 2026] 03-27 10:32:44.821  2665  2672 I rtk_audio_hw_patch: sink type:AUDIO_PORT_TYPE_DEVICE: sink[0] device:0x2,address:
+[Wed Apr 01 14:49:45.262 2026] 03-27 10:32:44.821  2665  2672 I rtk_audio_hw_patch: patch .....1..... ,handle:2
+[Wed Apr 01 14:49:45.270 2026] 03-27 10:32:44.821  2665  2672 I rtk_audio_hw_patch: source type:AUDIO_PORT_TYPE_MIX: source[0] handle:0x15,usecase:-1
+[Wed Apr 01 14:49:45.281 2026] 03-27 10:32:44.821  2665  2672 I rtk_audio_hw_patch: sink type:AUDIO_PORT_TYPE_DEVICE: sink[0] device:0x2,address:
+[Wed Apr 01 14:49:45.292 2026] 03-27 10:32:44.821  2665  2672 D rtk_audio_hw_patch: enddump ----------------patchManager!----------------
+[Wed Apr 01 14:49:45.301 2026] 03-27 10:32:44.821  2665  2672 I rtk_audio_hw_patch: create_audio_patch done
+[Wed Apr 01 14:49:45.307 2026] 03-27 10:32:44.823  2665  2672 I rtk_audio_hw: adev_open_output_stream handle:1d, flags=0x1, format:0x1, rate:44100 channel:0x1, devices:0x2
+[Wed Apr 01 14:49:45.321 2026] 03-27 10:32:44.828  2665  2672 I rtk_audio_hw: adev_open_output_stream aos=0xe86c0aa8, handle:1d, flags=0x1, format:0x1, rate:44100 channel:0x1, devices:0x2
+[Wed Apr 01 14:49:45.332 2026] 03-27 10:32:44.836  2665  2672 I rtk_audio_hw: adev_open_output_stream handle:25, flags=0x41, format:0x1, rate:44100 channel:0x1, devices:0x2
+[Wed Apr 01 14:49:45.347 2026] 03-27 10:32:44.840  2665  2672 I rtk_audio_hw: adev_open_output_stream aos=0xe3545e30, handle:25, flags=0x41, format:0x1, rate:44100 channel:0x1, devices:0x2
+[Wed Apr 01 14:49:45.362 2026] 03-27 10:32:44.850  2665  2672 D rtk_audio_hw: profile, adev_close_output_stream:3012,time=7 ms
+[Wed Apr 01 14:49:45.370 2026] 03-27 10:32:44.850  2665  2665 I rtk_audio_hw: adev_open_output_stream handle:2d, flags=0x4001, format:0x1, rate:44100 channel:0x3, devices:0x2
+[Wed Apr 01 14:49:45.382 2026] 03-27 10:32:44.850  2665  2665 I rtk_audio_hw: Use AAudio Device 0
+[Wed Apr 01 14:49:45.388 2026] 03-27 10:32:44.850  2665  2665 D rtk_audio_hw: AAudio samplerate:44100, format:0, channel:2
+[Wed Apr 01 14:49:45.397 2026] 03-27 10:32:44.850  2665  2665 D rtk_audio_hw: out_get_sample_rate_aaudio 44100
+[Wed Apr 01 14:49:45.405 2026] 03-27 10:32:44.850  2665  2665 I rtk_audio_hw: adev_open_output_stream end, handle:2d, devices:0x2 flags:0x4001 samplerate:44100, format:0x1, output_type=3, channel:0x3
+[Wed Apr 01 14:49:45.421 2026] 03-27 10:32:44.850  2665  2665 D rtk_audio_hw: out_update_source_metadata_v7:1634,stream=0xe3ac4c90 source_metadata=0xff854d88
+[Wed Apr 01 14:49:45.428 2026] 03-27 10:32:44.851  2665  2665 D rtk_audio_hw: out_get_sample_rate_aaudio 44100
+[Wed Apr 01 14:49:45.439 2026] 03-27 10:32:44.851  2665  2665 D rtk_audio_hw: out_get_sample_rate_aaudio 44100
+[Wed Apr 01 14:49:45.443 2026] 03-27 10:32:44.851  2665  2665 D rtk_audio_hw: out_get_buffer_size_aaudio
+[Wed Apr 01 14:49:45.454 2026] 03-27 10:32:44.852  2665  2665 D rtk_audio_hw: adev_close_output_stream out=0xe3ac4c90 output_type 3
+[Wed Apr 01 14:49:45.457 2026] 03-27 10:32:44.852  2665  2665 I rtk_audio_hw: do_output_standby:910,out=0xe3ac4c90, standby=1,output_type=3,offload_open=0,compress_deinit=1
+[Wed Apr 01 14:49:45.476 2026] 03-27 10:32:44.852  2665  2665 D rtk_audio_hw: adev_close_output_stream OUTPUT_AAUDIO
+[Wed Apr 01 14:49:45.482 2026] 03-27 10:32:44.852  2665  2672 D rtk_audio_hw: adev_open_input_stream start
+[Wed Apr 01 14:49:45.489 2026] 03-27 10:32:44.852  2665  2672 D rtk_audio_hw: adev_open_input_stream end
+[Wed Apr 01 14:49:45.497 2026] 03-27 10:32:44.852  2665  2672 D rtk_audio_hw: adev_open_input_stream start
+[Wed Apr 01 14:49:45.502 2026] 03-27 10:32:44.852  2665  2672 D rtk_audio_hw: adev_open_input_stream end
+[Wed Apr 01 14:49:45.509 2026] 03-27 10:32:44.855  2665  2672 D rtk_audio_hw: adev_close_input_stream start
+[Wed Apr 01 14:49:45.512 2026] 03-27 10:32:44.855  2665  2672 D rtk_audio_hw: adev_close_input_stream end
+[Wed Apr 01 14:49:45.525 2026] 03-27 10:32:44.856  2665  2665 D rtk_audio_hw: adev_open_input_stream start
+[Wed Apr 01 14:49:45.528 2026] 03-27 10:32:44.856  2665  2665 D rtk_audio_hw: adev_open_input_stream end
+[Wed Apr 01 14:49:45.534 2026] 03-27 10:32:44.858  2665  2665 D rtk_audio_hw: adev_close_input_stream start
+[Wed Apr 01 14:49:45.538 2026] 03-27 10:32:44.858  2665  2665 D rtk_audio_hw: adev_close_input_stream end
+[Wed Apr 01 14:49:45.550 2026] 03-27 10:32:44.859  2665  2665 D rtk_audio_hw: adev_open_input_stream start
+[Wed Apr 01 14:49:45.555 2026] 03-27 10:32:44.859  2665  2665 D rtk_audio_hw: adev_open_input_stream end
+[Wed Apr 01 14:49:45.562 2026] 03-27 10:32:44.861  2665  2665 D rtk_audio_hw: adev_close_input_stream start
+[Wed Apr 01 14:49:45.570 2026] 03-27 10:32:44.861  2665  2665 D rtk_audio_hw: adev_close_input_stream end
+[Wed Apr 01 14:49:45.576 2026] 03-27 10:32:44.862  2665  2672 I r_submix: adev_open(name=audio_hw_if)
+[Wed Apr 01 14:49:45.583 2026] 03-27 10:32:44.983  2665  2672 D rtk_audio_hw: adev_set_parameters: input kvpairs: restarting=true
+[Wed Apr 01 14:49:45.592 2026] 03-27 10:32:45.481  2665  2672 D rtk_audio_hw: adev_open_input_stream start
+[Wed Apr 01 14:49:45.597 2026] 03-27 10:32:45.481  2665  2672 D rtk_audio_hw: adev_open_input_stream end
+[Wed Apr 01 14:49:45.605 2026] 03-27 10:32:45.481  2665  2672 D rtk_audio_hw: adev_open_input_stream start
+[Wed Apr 01 14:49:45.613 2026] 03-27 10:32:45.481  2665  2672 D rtk_audio_hw: adev_open_input_stream end
+[Wed Apr 01 14:49:45.620 2026] 03-27 10:32:45.488  2665  2672 I rtk_audio_hw_patch: adev_create_audio_patch: handle:0
+[Wed Apr 01 14:49:45.626 2026] 03-27 10:32:45.488  2665  2672 I rtk_audio_hw_patch: before addNewPatch: handle=0, numSources=1,numSinks=1
+[Wed Apr 01 14:49:45.632 2026] 03-27 10:32:45.488  2665  2672 D rtk_audio_hw_patch: dump ----------------patchManager!----------------totalcount:2
+[Wed Apr 01 14:49:45.647 2026] 03-27 10:32:45.488  2665  2672 I rtk_audio_hw_patch: patch .....0..... ,handle:1
+[Wed Apr 01 14:49:45.655 2026] 03-27 10:32:45.488  2665  2672 I rtk_audio_hw_patch: source type:AUDIO_PORT_TYPE_MIX: source[0] handle:0xd,usecase:-1
+[Wed Apr 01 14:49:45.662 2026] 03-27 10:32:45.488  2665  2672 I rtk_audio_hw_patch: sink type:AUDIO_PORT_TYPE_DEVICE: sink[0] device:0x2,address:
+[Wed Apr 01 14:49:45.677 2026] 03-27 10:32:45.488  2665  2672 I rtk_audio_hw_patch: patch .....1..... ,handle:2
+[Wed Apr 01 14:49:45.679 2026] 03-27 10:32:45.488  2665  2672 I rtk_audio_hw_patch: source type:AUDIO_PORT_TYPE_MIX: source[0] handle:0x15,usecase:-1
+[Wed Apr 01 14:49:45.693 2026] 03-27 10:32:45.488  2665  2672 I rtk_audio_hw_patch: sink type:AUDIO_PORT_TYPE_DEVICE: sink[0] device:0x2,address:
+[Wed Apr 01 14:49:45.705 2026] 03-27 10:32:45.488  2665  2672 D rtk_audio_hw_patch: enddump ----------------patchManager!----------------
+[Wed Apr 01 14:49:45.712 2026] 03-27 10:32:45.488  2665  2672 I rtk_audio_hw_patch: port: id:10, role:1, type:1, config_mask:7, sample_rate:16000, channel_mask:0xc, format:0x1, gain.index:0
+[Wed Apr 01 14:49:45.728 2026] 03-27 10:32:45.488  2665  2672 I rtk_audio_hw_patch: source[0]: port type:AUDIO_PORT_TYPE_DEVICE: device:0x80000004,address:bottom
+[Wed Apr 01 14:49:45.741 2026] 03-27 10:32:45.488  2665  2672 I rtk_audio_hw_patch: port: id:17, role:2, type:2, config_mask:7, sample_rate:16000, channel_mask:0xc, format:0x1, gain.index:0
+[Wed Apr 01 14:49:45.755 2026] 03-27 10:32:45.488  2665  2672 I rtk_audio_hw_patch: sink[0]: port type:AUDIO_PORT_TYPE_MIX: hw_module:0, handle:0x2e,usecase:7
+[Wed Apr 01 14:49:45.766 2026] 03-27 10:32:45.489  2665  2672 I rtk_audio_hw_patch: checkPatchExists: bRet:0
+[Wed Apr 01 14:49:45.776 2026] 03-27 10:32:45.489  2665  2672 I rtk_audio_hw_patch: after addNewPatch: handle=3, numSources=1,numSinks=1
+[Wed Apr 01 14:49:45.776 2026] 03-27 10:32:45.489  2665  2672 D rtk_audio_hw_patch: dump ----------------patchManager!----------------totalcount:3
+[Wed Apr 01 14:49:45.792 2026] 03-27 10:32:45.489  2665  2672 I rtk_audio_hw_patch: patch .....0..... ,handle:1
+[Wed Apr 01 14:49:45.797 2026] 03-27 10:32:45.489  2665  2672 I rtk_audio_hw_patch: source type:AUDIO_PORT_TYPE_MIX: source[0] handle:0xd,usecase:-1
+[Wed Apr 01 14:49:45.805 2026] 03-27 10:32:45.489  2665  2672 I rtk_audio_hw_patch: sink type:AUDIO_PORT_TYPE_DEVICE: sink[0] device:0x2,address:
+[Wed Apr 01 14:49:45.820 2026] 03-27 10:32:45.489  2665  2672 I rtk_audio_hw_patch: patch .....1..... ,handle:2
+[Wed Apr 01 14:49:45.826 2026] 03-27 10:32:45.489  2665  2672 I rtk_audio_hw_patch: source type:AUDIO_PORT_TYPE_MIX: source[0] handle:0x15,usecase:-1
+[Wed Apr 01 14:49:45.834 2026] 03-27 10:32:45.489  2665  2672 I rtk_audio_hw_patch: sink type:AUDIO_PORT_TYPE_DEVICE: sink[0] device:0x2,address:
+[Wed Apr 01 14:49:45.849 2026] 03-27 10:32:45.489  2665  2672 I rtk_audio_hw_patch: patch .....2..... ,handle:3
+[Wed Apr 01 14:49:45.855 2026] 03-27 10:32:45.489  2665  2672 I rtk_audio_hw_patch: source type:AUDIO_PORT_TYPE_DEVICE: source[0] device:0x80000004,address:bottom
+[Wed Apr 01 14:49:45.866 2026] 03-27 10:32:45.489  2665  2672 I rtk_audio_hw_patch: sink type:AUDIO_PORT_TYPE_MIX: sink[0] handle:0x2e,usecase:7
+[Wed Apr 01 14:49:45.880 2026] 03-27 10:32:45.489  2665  2672 D rtk_audio_hw_patch: enddump ----------------patchManager!----------------
+[Wed Apr 01 14:49:45.886 2026] 03-27 10:32:45.489  2665  2672 I rtk_audio_hw_patch: create_audio_patch done
+[Wed Apr 01 14:49:45.893 2026] 03-27 10:32:45.548  2665  2672 D rtk_audio_hw: adev_set_parameters: input kvpairs: restarting=false
+[Wed Apr 01 14:49:45.901 2026] 03-27 10:32:45.587  2665  2672 D rtk_audio_hw: adev_set_parameters: input kvpairs: rotation=0
+[Wed Apr 01 14:49:45.912 2026] 03-27 10:32:45.588  2665  2672 D rtk_audio_hw: adev_set_parameters: input kvpairs: device_folded=off
+[Wed Apr 01 14:50:03.512 2026] 03-27 10:33:22.815  2262  2262 D SimpleAssistantSession: onHide: Session HIDDEN. Stopping recording...
+[Wed Apr 01 14:50:03.601 2026] 03-27 10:33:22.904  2665  2672 I rtk_audio_hw_patch: adev_release_audio_patch (3)
+[Wed Apr 01 14:50:03.612 2026] 03-27 10:33:22.904  2665  2672 I rtk_audio_hw_patch: before remove patch handle:3
+[Wed Apr 01 14:50:03.618 2026] 03-27 10:33:22.904  2665  2672 D rtk_audio_hw_patch: dump ----------------patchManager!----------------totalcount:3
+[Wed Apr 01 14:50:03.628 2026] 03-27 10:33:22.904  2665  2672 I rtk_audio_hw_patch: patch .....0..... ,handle:1
+[Wed Apr 01 14:50:03.636 2026] 03-27 10:33:22.904  2665  2672 I rtk_audio_hw_patch: source type:AUDIO_PORT_TYPE_MIX: source[0] handle:0xd,usecase:-1
+[Wed Apr 01 14:50:03.646 2026] 03-27 10:33:22.904  2665  2672 I rtk_audio_hw_patch: sink type:AUDIO_PORT_TYPE_DEVICE: sink[0] device:0x2,address:
+[Wed Apr 01 14:50:03.655 2026] 03-27 10:33:22.904  2665  2672 I rtk_audio_hw_patch: patch .....1..... ,handle:2
+[Wed Apr 01 14:50:03.662 2026] 03-27 10:33:22.904  2665  2672 I rtk_audio_hw_patch: source type:AUDIO_PORT_TYPE_MIX: source[0] handle:0x15,usecase:-1
+[Wed Apr 01 14:50:03.675 2026] 03-27 10:33:22.904  2665  2672 I rtk_audio_hw_patch: sink type:AUDIO_PORT_TYPE_DEVICE: sink[0] device:0x2,address:
+[Wed Apr 01 14:50:03.683 2026] 03-27 10:33:22.904  2665  2672 I rtk_audio_hw_patch: patch .....2..... ,handle:3
+[Wed Apr 01 14:50:03.683 2026] 03-27 10:33:22.904  2665  2672 I rtk_audio_hw_patch: source type:AUDIO_PORT_TYPE_DEVICE: source[0] device:0x80000004,address:bottom
+[Wed Apr 01 14:50:03.701 2026] 03-27 10:33:22.905  2665  2672 I rtk_audio_hw_patch: sink type:AUDIO_PORT_TYPE_MIX: sink[0] handle:0x2e,usecase:7
+[Wed Apr 01 14:50:03.712 2026] 03-27 10:33:22.905  2665  2672 D rtk_audio_hw_patch: enddump ----------------patchManager!----------------
+[Wed Apr 01 14:50:03.726 2026] 03-27 10:33:22.905  2665  2672 I rtk_audio_hw_patch: after remove patch handle:3
+[Wed Apr 01 14:50:03.732 2026] 03-27 10:33:22.905  2665  2672 D rtk_audio_hw_patch: dump ----------------patchManager!----------------totalcount:2
+[Wed Apr 01 14:50:03.741 2026] 03-27 10:33:22.905  2665  2672 I rtk_audio_hw_patch: patch .....0..... ,handle:1
+[Wed Apr 01 14:50:03.747 2026] 03-27 10:33:22.905  2665  2672 I rtk_audio_hw_patch: source type:AUDIO_PORT_TYPE_MIX: source[0] handle:0xd,usecase:-1
+[Wed Apr 01 14:50:03.757 2026] 03-27 10:33:22.905  2665  2672 I rtk_audio_hw_patch: sink type:AUDIO_PORT_TYPE_DEVICE: sink[0] device:0x2,address:
+[Wed Apr 01 14:50:03.769 2026] 03-27 10:33:22.905  2665  2672 I rtk_audio_hw_patch: patch .....1..... ,handle:2
+[Wed Apr 01 14:50:03.776 2026] 03-27 10:33:22.905  2665  2672 I rtk_audio_hw_patch: source type:AUDIO_PORT_TYPE_MIX: source[0] handle:0x15,usecase:-1
+[Wed Apr 01 14:50:03.786 2026] 03-27 10:33:22.905  2665  2672 I rtk_audio_hw_patch: sink type:AUDIO_PORT_TYPE_DEVICE: sink[0] device:0x2,address:
+[Wed Apr 01 14:50:03.797 2026] 03-27 10:33:22.905  2665  2672 D rtk_audio_hw_patch: enddump ----------------patchManager!----------------
+[Wed Apr 01 14:50:03.805 2026] 03-27 10:33:22.910  2665  2672 D rtk_audio_hw: adev_close_input_stream start
+[Wed Apr 01 14:50:03.812 2026] 03-27 10:33:22.910  2665  2672 D rtk_audio_hw: adev_close_input_stream end
+[Wed Apr 01 14:50:03.823 2026] 03-27 10:33:22.911  2262  2262 D SimpleAssistantSession: AEC released
+[Wed Apr 01 14:50:03.828 2026] 03-27 10:33:22.920  2262  2262 D SimpleAssistantSession: Audio file saved to: /storage/emulated/0/Recordings/voice_test_1774603964166.wav

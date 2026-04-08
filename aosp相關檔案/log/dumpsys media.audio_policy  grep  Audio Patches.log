@@ -1,0 +1,17 @@
+
+[Tue Mar 31 11:29:56.895 2026] su
+[Tue Mar 31 11:29:57.651 2026] console:/ # settings put secure voice_interaction_service com.example.simplevosecure voice_interaction_service com.example.simplevo                         <iceassistant/.MyVoiceInteservice com.example.simplevoiceassistant/.MyVoiceInte                         <ractionService
+[Tue Mar 31 11:29:59.233 2026] console:/ # cmd voiceinteraction show
+[Tue Mar 31 11:30:55.284 2026] console:/ # dumpsys media.audio_policy | grep -A 10 "Audio Patches"
+[Tue Mar 31 11:31:15.661 2026]  Audio Patches (3):
+[Tue Mar 31 11:31:15.668 2026]   1. owner uid 1041; handle  3; af handle 12
+[Tue Mar 31 11:31:15.670 2026]      [src  1] Mix Port ID: 1; I/O handle: 13;
+[Tue Mar 31 11:31:15.676 2026]      [sink 1] Device Port ID: 2; {AUDIO_DEVICE_OUT_SPEAKER, @:}
+[Tue Mar 31 11:31:15.681 2026]   2. owner uid 1041; handle  5; af handle 20
+[Tue Mar 31 11:31:15.684 2026]      [src  1] Mix Port ID: 4; I/O handle: 21;
+[Tue Mar 31 11:31:15.689 2026]      [sink 1] Device Port ID: 2; {AUDIO_DEVICE_OUT_SPEAKER, @:}
+[Tue Mar 31 11:31:15.695 2026]   3. owner uid 1041; handle 23; af handle 28
+[Tue Mar 31 11:31:15.695 2026]      [src  1] Device Port ID: 14; {AUDIO_DEVICE_IN_BUILTIN_MIC, @:bottom}
+[Tue Mar 31 11:31:15.702 2026]      [sink 1] Mix Port ID: 21; I/O handle: 46;
+[Tue Mar 31 11:31:15.710 2026] 
+[Tue Mar 31 11:31:15.714 2026] console:/ # 

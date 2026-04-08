@@ -1,0 +1,214 @@
+
+[Wed Apr 01 13:16:31.773 2026] cmd voiceinteraction show
+[Wed Apr 01 13:16:33.809 2026] console:/ # dumpsys media.audio_policy | grep -A 10 "Audio Patches"
+[Wed Apr 01 13:16:47.896 2026]  Audio Patches (3):
+[Wed Apr 01 13:16:47.901 2026]   1. owner uid 1041; handle  3; af handle 12
+[Wed Apr 01 13:16:47.909 2026]      [src  1] Mix Port ID: 1; I/O handle: 13;
+[Wed Apr 01 13:16:47.914 2026]      [sink 1] Device Port ID: 2; {AUDIO_DEVICE_OUT_SPEAKER, @:}
+[Wed Apr 01 13:16:47.915 2026]   2. owner uid 1041; handle  5; af handle 20
+[Wed Apr 01 13:16:47.915 2026]      [src  1] Mix Port ID: 4; I/O handle: 21;
+[Wed Apr 01 13:16:47.922 2026]      [sink 1] Device Port ID: 2; {AUDIO_DEVICE_OUT_SPEAKER, @:}
+[Wed Apr 01 13:16:47.928 2026]   3. owner uid 1041; handle 19; af handle 28
+[Wed Apr 01 13:16:47.931 2026]      [src  1] Device Port ID: 10; {AUDIO_DEVICE_IN_BUILTIN_MIC, @:bottom}
+[Wed Apr 01 13:16:47.939 2026]      [sink 1] Mix Port ID: 17; I/O handle: 46;
+[Wed Apr 01 13:16:47.942 2026] 
+[Wed Apr 01 13:16:47.943 2026] console:/ # dumpsys media.audio_flinger | grep -A 40 "Input thread"
+[Wed Apr 01 13:17:02.976 2026] Input thread 0xec7fceb0, name AudioIn_2E, tid 2526, type 3 (RECORD):
+[Wed Apr 01 13:17:02.986 2026]   I/O handle: 46
+[Wed Apr 01 13:17:02.991 2026]   Standby: no
+[Wed Apr 01 13:17:02.991 2026]   Sample rate: 16000 Hz
+[Wed Apr 01 13:17:02.991 2026]   HAL frame count: 1024
+[Wed Apr 01 13:17:02.996 2026]   HAL format: 0x3 (AUDIO_FORMAT_PCM_32_BIT)
+[Wed Apr 01 13:17:03.001 2026]   HAL buffer size: 8192 bytes
+[Wed Apr 01 13:17:03.001 2026]   Channel count: 2
+[Wed Apr 01 13:17:03.001 2026]   Channel mask: 0x0000000c (left, right)
+[Wed Apr 01 13:17:03.007 2026]   Processing format: 0x3 (AUDIO_FORMAT_PCM_32_BIT)
+[Wed Apr 01 13:17:03.009 2026]   Processing frame size: 8 bytes
+[Wed Apr 01 13:17:03.009 2026]   Pending config events: none
+[Wed Apr 01 13:17:03.015 2026]   Output devices:  (Empty device types)
+[Wed Apr 01 13:17:03.022 2026]   Input device: 0x80000004 (AUDIO_DEVICE_IN_BUILTIN_MIC)
+[Wed Apr 01 13:17:03.026 2026]   Audio source: 7 (AUDIO_SOURCE_VOICE_COMMUNICATION)
+[Wed Apr 01 13:17:03.032 2026]   Timestamp stats: n=434 disc=0 cold=0 nRdy=0 err=0 rate=1 jitterMs(ave=0 std=0 min=0 max=0) localSR(16000, 1.11022e-16) correctedJitterMs(ave=-2.54333e-05 std=0.0271318 min=-0.0625 max=0.0625)
+[Wed Apr 01 13:17:03.048 2026]   Timestamp corrected: no
+[Wed Apr 01 13:17:03.051 2026]   Last read occurred (msecs): 65
+[Wed Apr 01 13:17:03.051 2026]   Process time ms stats: ave=0.130881 std=0.0105804 min=0.120148 max=0.223444
+[Wed Apr 01 13:17:03.059 2026]   Hal read jitter ms stats: ave=0.00816552 std=3.85292 min=-8.07493 max=8.0587
+[Wed Apr 01 13:17:03.065 2026]   Threadloop read latency stats: ave=3.03105 std=2.65305 min=-3.93501 max=10.4512
+[Wed Apr 01 13:17:03.071 2026]   AudioStreamIn: 0xf2283610 flags 0x20 (AUDIO_INPUT_FLAG_VOIP_TX)
+[Wed Apr 01 13:17:03.079 2026]   Frames read: 444416
+[Wed Apr 01 13:17:03.079 2026]   Hal stream dump:
+[Wed Apr 01 13:17:03.085 2026]       Signal power history:
+[Wed Apr 01 13:17:03.085 2026]        03-27 09:00:02.953:    -49.7  -49.2  -48.5  -50.1  -53.1  -52.2  -51.6  -51.8  -52.7  -51.5
+[Wed Apr 01 13:17:03.093 2026]        03-27 09:00:03.465:    -49.3  -48.3  -49.7  -51.0  -50.7  -50.5  -50.8  -53.0  -47.6  -47.3
+[Wed Apr 01 13:17:03.101 2026]        03-27 09:00:03.981:    -47.5  -48.0  -46.4  -44.9  -45.7  -48.1  -48.0  -51.2  -51.0  -51.2
+[Wed Apr 01 13:17:03.111 2026]        03-27 09:00:04.489:    -49.9  -40.1  -39.6  -39.5  -41.0  -42.5  -42.6  -42.6  -42.8  -43.1
+[Wed Apr 01 13:17:03.121 2026]        03-27 09:00:05.001:    -44.2  -44.2  -41.3  -40.6  -41.9  -41.5  -45.4  -48.4  -47.4  -44.4
+[Wed Apr 01 13:17:03.127 2026]        03-27 09:00:05.453:    -45.2  -45.4  -46.5  -48.5  -50.7  -51.8  -51.2  -51.4  -50.9  -51.5
+[Wed Apr 01 13:17:03.135 2026]        03-27 09:00:05.965:    -50.8  -48.3  -46.2  -46.8  -47.9  -48.0  -47.7  -48.2  -51.1  -51.2
+[Wed Apr 01 13:17:03.149 2026]        03-27 09:00:06.477:    -51.1  -52.9  -51.6  -51.3  -46.0  -43.6  -43.7  -43.9  -44.9  -46.0
+[Wed Apr 01 13:17:03.151 2026]        03-27 09:00:06.989:    -45.3  -44.9  -45.9  -47.2  -49.0  -51.6  -49.7  -47.5  -47.9  -48.4
+[Wed Apr 01 13:17:03.165 2026]        03-27 09:00:07.501:    -47.6  -50.1  -49.8  -50.5  -51.8  -45.2  -44.8  -43.7  -44.3  -46.0
+[Wed Apr 01 13:17:03.171 2026]        03-27 09:00:08.013:    -43.7  -42.0  -42.2  -42.1  -40.6  -41.3  -40.6  -39.8  -39.7  -39.3
+[Wed Apr 01 13:17:03.182 2026]        03-27 09:00:08.461:    -40.3  -37.0  -32.4  -30.6  -30.1  -30.5  -30.3  -31.6  -33.2  -35.7
+[Wed Apr 01 13:17:03.193 2026]        03-27 09:00:08.973:    -37.7  -38.4  -37.5  -37.8  -38.4  -39.9  -46.0  -47.7  -29.9  -31.1
+[Wed Apr 01 13:17:03.200 2026]        03-27 09:00:09.485:    -32.8  -32.3  -34.5  -37.9  -39.8  -38.1  -40.8  -39.6  -41.1  -42.1
+[Wed Apr 01 13:17:03.208 2026]        03-27 09:00:09.997:    -43.5  -51.8  -47.3  -44.8  -45.0  -48.1  -39.3  -41.0  -44.4  -46.8
+[Wed Apr 01 13:17:03.216 2026]        03-27 09:00:10.509:    -51.1  -53.7  -54.3  -51.0  -52.1  -50.1  -46.7  -46.6  -48.3  -48.8
+[Wed Apr 01 13:17:03.229 2026] --
+[Wed Apr 01 13:17:03.229 2026] - Input thread 0xec7fceb0, name AudioIn_E, tid 2512, type 3 (RECORD):
+[Wed Apr 01 13:17:03.236 2026] -   I/O handle: 14
+[Wed Apr 01 13:17:03.236 2026] -   Standby: yes
+[Wed Apr 01 13:17:03.236 2026] -   Sample rate: 16000 Hz
+[Wed Apr 01 13:17:03.240 2026] -   HAL frame count: 1024
+[Wed Apr 01 13:17:03.243 2026] -   HAL format: 0x3 (AUDIO_FORMAT_PCM_32_BIT)
+[Wed Apr 01 13:17:03.247 2026] -   HAL buffer size: 8192 bytes
+[Wed Apr 01 13:17:03.247 2026] -   Channel count: 2
+[Wed Apr 01 13:17:03.252 2026] -   Channel mask: 0x0000000c (left, right)
+[Wed Apr 01 13:17:03.257 2026] -   Processing format: 0x3 (AUDIO_FORMAT_PCM_32_BIT)
+[Wed Apr 01 13:17:03.259 2026] -   Processing frame size: 8 bytes
+[Wed Apr 01 13:17:03.265 2026] -   Pending config events: none
+[Wed Apr 01 13:17:03.269 2026] -   Output devices:  (Empty device types)
+[Wed Apr 01 13:17:03.269 2026] -   Input device: 0 (AUDIO_DEVICE_NONE)
+[Wed Apr 01 13:17:03.274 2026] -   Audio source: 0 (AUDIO_SOURCE_DEFAULT)
+[Wed Apr 01 13:17:03.274 2026] -   Timestamp stats: n=0 disc=0 cold=0 nRdy=0 err=0 jitterMs(unavail) localSR(nan, nan) correctedJitterMs(unavail)
+[Wed Apr 01 13:17:03.286 2026] -   Timestamp corrected: no
+[Wed Apr 01 13:17:03.290 2026] -   AudioStreamIn: 0xf22823b0 flags 0 (AUDIO_INPUT_FLAG_NONE)
+[Wed Apr 01 13:17:03.294 2026] -   Frames read: 0
+[Wed Apr 01 13:17:03.299 2026] -   No active record clients
+[Wed Apr 01 13:17:03.299 2026] -   Hal stream dump:
+[Wed Apr 01 13:17:03.304 2026] -       Signal power history: (none)
+[Wed Apr 01 13:17:03.309 2026] -   Fast capture thread: no
+[Wed Apr 01 13:17:03.309 2026] -   Fast track available: no
+[Wed Apr 01 13:17:03.312 2026] -   FastCapture not initialized
+[Wed Apr 01 13:17:03.316 2026] -   0 Tracks
+[Wed Apr 01 13:17:03.316 2026] -   0 Effect Chains
+[Wed Apr 01 13:17:03.316 2026] -   Local log:
+[Wed Apr 01 13:17:03.321 2026] 
+[Wed Apr 01 13:17:03.321 2026] Historical Thread Log 03-27 08:59:53.890 - 
+[Wed Apr 01 13:17:03.323 2026] - Input thread 0xec7fceb0, name AudioIn_16, tid 2515, type 3 (RECORD):
+[Wed Apr 01 13:17:03.328 2026] -   I/O handle: 22
+[Wed Apr 01 13:17:03.331 2026] -   Standby: yes
+[Wed Apr 01 13:17:03.331 2026] -   Sample rate: 16000 Hz
+[Wed Apr 01 13:17:03.337 2026] -   HAL frame count: 1024
+[Wed Apr 01 13:17:03.337 2026] -   HAL format: 0x3 (AUDIO_FORMAT_PCM_32_BIT)
+[Wed Apr 01 13:17:03.339 2026] -   HAL buffer size: 8192 bytes
+[Wed Apr 01 13:17:03.346 2026] -   Channel count: 2
+[Wed Apr 01 13:17:03.347 2026] -   Channel mask: 0x0000000c (left, right)
+[Wed Apr 01 13:17:03.352 2026] -   Processing format: 0x3 (AUDIO_FORMAT_PCM_32_BIT)
+[Wed Apr 01 13:17:03.356 2026] -   Processing frame size: 8 bytes
+[Wed Apr 01 13:17:03.359 2026] -   Pending config events: none
+[Wed Apr 01 13:17:03.359 2026] -   Output devices:  (Empty device types)
+[Wed Apr 01 13:17:03.364 2026] -   Input device: 0 (AUDIO_DEVICE_NONE)
+[Wed Apr 01 13:17:03.370 2026] -   Audio source: 0 (AUDIO_SOURCE_DEFAULT)
+[Wed Apr 01 13:17:03.370 2026] -   Timestamp stats: n=0 disc=0 cold=0 nRdy=0 err=0 jitterMs(unavail) localSR(nan, nan) correctedJitterMs(unavail)
+[Wed Apr 01 13:17:03.381 2026] -   Timestamp corrected: no
+[Wed Apr 01 13:17:03.385 2026] -   AudioStreamIn: 0xf2281d10 flags 0 (AUDIO_INPUT_FLAG_NONE)
+[Wed Apr 01 13:17:03.390 2026] -   Frames read: 0
+[Wed Apr 01 13:17:03.394 2026] -   No active record clients
+[Wed Apr 01 13:17:03.394 2026] -   Hal stream dump:
+[Wed Apr 01 13:17:03.400 2026] -       Signal power history: (none)
+[Wed Apr 01 13:17:03.407 2026] -   Fast capture thread: no
+[Wed Apr 01 13:17:03.407 2026] -   Fast track available: no
+[Wed Apr 01 13:17:03.411 2026] -   FastCapture not initialized
+[Wed Apr 01 13:17:03.411 2026] -   0 Tracks
+[Wed Apr 01 13:17:03.411 2026] -   0 Effect Chains
+[Wed Apr 01 13:17:03.415 2026] -   Local log:
+[Wed Apr 01 13:17:03.415 2026] 
+[Wed Apr 01 13:17:03.415 2026] Historical Thread Log 03-27 08:59:53.893 - 
+[Wed Apr 01 13:17:03.417 2026] - Input thread 0xec7fceb0, name AudioIn_1E, tid 2517, type 3 (RECORD):
+[Wed Apr 01 13:17:03.421 2026] -   I/O handle: 30
+[Wed Apr 01 13:17:03.421 2026] -   Standby: yes
+[Wed Apr 01 13:17:03.427 2026] -   Sample rate: 48000 Hz
+[Wed Apr 01 13:17:03.427 2026] -   HAL frame count: 4096
+[Wed Apr 01 13:17:03.433 2026] -   HAL format: 0x1 (AUDIO_FORMAT_PCM_16_BIT)
+[Wed Apr 01 13:17:03.435 2026] -   HAL buffer size: 16384 bytes
+[Wed Apr 01 13:17:03.440 2026] -   Channel count: 2
+[Wed Apr 01 13:17:03.440 2026] -   Channel mask: 0x0000000c (left, right)
+[Wed Apr 01 13:17:03.443 2026] -   Processing format: 0x1 (AUDIO_FORMAT_PCM_16_BIT)
+[Wed Apr 01 13:17:03.451 2026] -   Processing frame size: 4 bytes
+[Wed Apr 01 13:17:03.456 2026] -   Pending config events: none
+[Wed Apr 01 13:17:03.456 2026] -   Output devices:  (Empty device types)
+[Wed Apr 01 13:17:03.459 2026] -   Input device: 0 (AUDIO_DEVICE_NONE)
+[Wed Apr 01 13:17:03.464 2026] -   Audio source: 0 (AUDIO_SOURCE_DEFAULT)
+[Wed Apr 01 13:17:03.465 2026] -   Timestamp stats: n=0 disc=0 cold=0 nRdy=0 err=0 jitterMs(unavail) localSR(nan, nan) correctedJitterMs(unavail)
+[Wed Apr 01 13:17:03.474 2026] -   Timestamp corrected: no
+[Wed Apr 01 13:17:03.481 2026] -   AudioStreamIn: 0xf22823b0 flags 0 (AUDIO_INPUT_FLAG_NONE)
+[Wed Apr 01 13:17:03.486 2026] -   Frames read: 0
+[Wed Apr 01 13:17:03.486 2026] -   No active record clients
+[Wed Apr 01 13:17:03.490 2026] -   Hal stream dump:
+[Wed Apr 01 13:17:03.495 2026] -       Signal power history: (none)
+[Wed Apr 01 13:17:03.495 2026] -   Fast capture thread: no
+[Wed Apr 01 13:17:03.500 2026] -   Fast track available: no
+[Wed Apr 01 13:17:03.500 2026] -   FastCapture not initialized
+[Wed Apr 01 13:17:03.500 2026] -   0 Tracks
+[Wed Apr 01 13:17:03.500 2026] -   0 Effect Chains
+[Wed Apr 01 13:17:03.508 2026] -   Local log:
+[Wed Apr 01 13:17:03.508 2026] 
+[Wed Apr 01 13:17:03.508 2026] Historical Thread Log 03-27 08:59:53.898 - 
+[Wed Apr 01 13:17:03.512 2026] - Input thread 0xec7fceb0, name AudioIn_26, tid 2519, type 3 (RECORD):
+[Wed Apr 01 13:17:03.515 2026] -   I/O handle: 38
+[Wed Apr 01 13:17:03.522 2026] -   Standby: no
+[Wed Apr 01 13:17:03.522 2026] -   Sample rate: 48000 Hz
+[Wed Apr 01 13:17:03.527 2026] -   HAL frame count: 1024
+[Wed Apr 01 13:17:03.527 2026] -   HAL format: 0x1 (AUDIO_FORMAT_PCM_16_BIT)
+[Wed Apr 01 13:17:03.531 2026] -   HAL buffer size: 4096 bytes
+[Wed Apr 01 13:17:03.535 2026] -   Channel count: 2
+[Wed Apr 01 13:17:03.535 2026] -   Channel mask: 0x0000000c (left, right)
+[Wed Apr 01 13:17:03.542 2026] -   Processing format: 0x1 (AUDIO_FORMAT_PCM_16_BIT)
+[Wed Apr 01 13:17:03.544 2026] -   Processing frame size: 4 bytes
+[Wed Apr 01 13:17:03.550 2026] -   Pending config events: none
+[Wed Apr 01 13:17:03.553 2026] -   Output devices:  (Empty device types)
+[Wed Apr 01 13:17:03.553 2026] -   Input device: 0 (AUDIO_DEVICE_NONE)
+[Wed Apr 01 13:17:03.559 2026] -   Audio source: 0 (AUDIO_SOURCE_DEFAULT)
+[Wed Apr 01 13:17:03.564 2026] -   Timestamp stats: n=0 disc=0 cold=0 nRdy=0 err=0 jitterMs(unavail) localSR(nan, nan) correctedJitterMs(unavail)
+[Wed Apr 01 13:17:03.571 2026] -   Timestamp corrected: no
+[Wed Apr 01 13:17:03.575 2026] -   AudioStreamIn: 0xf2282190 flags 0 (AUDIO_INPUT_FLAG_NONE)
+[Wed Apr 01 13:17:03.575 2026] -   Frames read: 0
+[Wed Apr 01 13:17:03.581 2026] -   No active record clients
+[Wed Apr 01 13:17:03.588 2026] -   Hal stream dump:
+[Wed Apr 01 13:17:03.588 2026] -       Signal power history: (none)
+[Wed Apr 01 13:17:03.591 2026] -   Fast capture thread: no
+[Wed Apr 01 13:17:03.596 2026] -   Fast track available: no
+[Wed Apr 01 13:17:03.596 2026] -   FastCapture not initialized
+[Wed Apr 01 13:17:03.601 2026] -   0 Tracks
+[Wed Apr 01 13:17:03.601 2026] -   0 Effect Chains
+[Wed Apr 01 13:17:03.601 2026] -   Local log:
+[Wed Apr 01 13:17:03.601 2026] 
+[Wed Apr 01 13:17:03.601 2026] 
+[Wed Apr 01 13:17:03.601 2026] IAudioFlinger binder call profile:
+[Wed Apr 01 13:17:03.609 2026] 2 createRecord n=1 ave=6.48433 min=6.48433 max=6.48433
+[Wed Apr 01 13:17:03.609 2026] 11 setMasterBalance n=1 ave=0.017406 min=0.017406 max=0.017406
+[Wed Apr 01 13:17:03.618 2026] 18 setMicMute n=1 ave=0.159148 min=0.159148 max=0.159148
+[Wed Apr 01 13:17:03.622 2026] 19 getMicMute n=2 ave=0.116239 std=0.0448617 min=0.084517 max=0.147961
+[Wed Apr 01 13:17:03.622 2026] 21 setParameters n=4 ave=0.684962 std=0.421577 min=0.250481 max=1.10907
+[Wed Apr 01 13:17:03.631 2026] 23 registerClient n=2 ave=0.132535 std=0.0918454 min=0.067591 max=0.19748
+[Wed Apr 01 13:17:03.640 2026] 47 setLowRamDevice n=1 ave=0.050332 min=0.050332 max=0.050332
+[Wed Apr 01 13:17:03.647 2026] 54 systemReady n=1 ave=0.768998 min=0.768998 max=0.768998
+[Wed Apr 01 13:17:03.653 2026] 58 setAudioHalPids n=1 ave=0.025554 min=0.025554 max=0.025554
+[Wed Apr 01 13:17:03.659 2026] 71 getSoundDoseInterface n=1 ave=0.032738 min=0.032738 max=0.032738
+[Wed Apr 01 13:17:03.669 2026] console:/ # logcat | grep -iE "(PreProcessing|AEC_DEBUG|AcousticEchoCanceler|S -iE "(PreProcessing|AEC_DEBUG|AcousticEchoCanceler|S                         <impleAssistantSession)"
+[Wed Apr 01 13:17:22.335 2026] 03-27 08:59:53.080  2262  2262 D SimpleAssistantSessionService: onNewSession: The system is requesting to create a new voice session
+[Wed Apr 01 13:17:22.348 2026] 03-27 08:59:53.089  2262  2262 D SimpleAssistantSession: MyVoiceInteractionSession: Instance created
+[Wed Apr 01 13:17:22.355 2026] 03-27 08:59:53.239  2262  2262 D SimpleAssistantSession: onShow: Session is VISIBLE. Starting recording...
+[Wed Apr 01 13:17:22.368 2026] 03-27 08:59:53.266  2262  2262 D SimpleAssistantSession: AudioRecord initialized with Session ID: 73
+[Wed Apr 01 13:17:22.377 2026] 03-27 08:59:53.273  2262  2262 D SimpleAssistantSession: AcousticEchoCanceler.isAvailable(): true
+[Wed Apr 01 13:17:22.384 2026] 03-27 08:59:53.274   458   458 V PreProcessing: EffectCreate: uuid: bb392ec0 session 73 IO: 46
+[Wed Apr 01 13:17:22.390 2026] 03-27 08:59:53.274   458   458 V PreProcessing: Session_CreateEffect procId 2, createdMsk 00000000
+[Wed Apr 01 13:17:22.400 2026] 03-27 08:59:53.278   458   458 V PreProcessing: Effect_SetState proc 2, new 1 old 0
+[Wed Apr 01 13:17:22.409 2026] 03-27 08:59:53.278   458   458 V PreProcessing: AecInit
+[Wed Apr 01 13:17:22.414 2026] 03-27 08:59:53.278   458   458 V PreProcessing: Session_CreateEffect OK
+[Wed Apr 01 13:17:22.421 2026] 03-27 08:59:53.278   458   458 V PreProcessing: AecInit
+[Wed Apr 01 13:17:22.421 2026] 03-27 08:59:53.278   458   458 V PreProcessing: Session_SetConfig sr 16000 cnl 0000000c
+[Wed Apr 01 13:17:22.435 2026] 03-27 08:59:53.278   458   458 V PreProcessing: Effect_SetState proc 2, new 2 old 1
+[Wed Apr 01 13:17:22.441 2026] 03-27 08:59:53.279   458   458 V PreProcessing: Session_SetConfig sr 16000 cnl 0000000c
+[Wed Apr 01 13:17:22.447 2026] 03-27 08:59:53.279   458   458 V PreProcessing: Effect_SetState proc 2, new 2 old 2
+[Wed Apr 01 13:17:22.451 2026] 03-27 08:59:53.280  2262  2262 D SimpleAssistantSession: AEC instance created. setEnabled(true) returned: 0
+[Wed Apr 01 13:17:22.467 2026] 03-27 08:59:53.281   458   458 V PreProcessing: AecSetDevice 80000004
+[Wed Apr 01 13:17:22.471 2026] 03-27 08:59:53.284   458   458 V PreProcessing: Effect_SetState proc 2, new 3 old 2
+[Wed Apr 01 13:17:22.481 2026] 03-27 08:59:53.285   458   458 V PreProcessing: Session_SetProcEnabled proc 2, enabled 1 enabledMsk 00000004 revEnabledMsk 00000004
+[Wed Apr 01 13:17:22.494 2026] 03-27 08:59:53.742  2471  2477 V PreProcessing: PreProcessingLib_GetDescriptor() got fx Automatic Gain Control
+[Wed Apr 01 13:17:22.507 2026] 03-27 08:59:53.742  2471  2477 V PreProcessing: PreProcessingLib_GetDescriptor() got fx Acoustic Echo Canceler
+[Wed Apr 01 13:17:22.515 2026] 03-27 08:59:53.742  2471  2477 V PreProcessing: PreProcessingLib_GetDescriptor() got fx Noise Suppression
+[Wed Apr 01 13:17:36.750 2026] 03-27 09:00:56.249  2262  2262 D SimpleAssistantSession: onHide: Session HIDDEN. Stopping recording...
+[Wed Apr 01 13:17:36.904 2026] 03-27 09:00:56.404  2262  2262 D SimpleAssistantSession: AEC released
+[Wed Apr 01 13:17:36.909 2026] 03-27 09:00:56.406  2262  2262 D SimpleAssistantSession: Audio file saved to: /storage/emulated/0/Recordings/voice_test_1774598393239.wav
